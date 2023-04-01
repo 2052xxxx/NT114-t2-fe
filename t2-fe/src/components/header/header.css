@@ -1,0 +1,36 @@
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #D46BCA;
+    padding: 1em 1em;
+    background-color: #ffff;
+}
+
+.theLogo{
+    height: 4em;
+}
+
+.theName {
+    height: 2em;
+}
+
+.lists {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+}
+
+.lists >li{
+    padding: 1em;
+}
+
+.signIn{
+    margin: 1em;
+    border-radius: 1em;
+    padding: 10px;
+    border-color: #553566;
+    background-color: #553566;
+    color: #ffff;
+}

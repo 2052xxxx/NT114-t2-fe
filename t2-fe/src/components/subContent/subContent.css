@@ -1,0 +1,32 @@
+.sub.currently-loading img { 
+    display: flex; 
+    /* width: 50%; */
+}
+
+.subContent {
+    background-color: antiquewhite;
+    min-height: 70vh; /* minimum height = screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7vh;
+}
+
+.Content > h1{
+    color: #C19167;
+}
+
+.Content{
+    padding-right: 3.5vh;
+}
+
+.sub > img{
+    height: 70%;
+    align-items: center;
+    /* padding-left: 3.5vh; */
+    /* margin-top: 3em; */
+    border: 4px dashed #553566;
+    border-radius: 1em;
+}
+
+
