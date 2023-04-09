@@ -1,21 +1,30 @@
 import React from "react";
 import './Login.css'
 
-export default function Header(){
+export default function Login(){
     return(
-        <header>
+        <div className = "Login-Button">
             <div>
                 <h1>Welcome</h1>
             </div>
-            <button className="SWG">
-                Sign in with Google
-            </button>
-            <button className="SWF">
-                Sign in with Facebook
-            </button>
-            <button className="SWE">
-                Sign in with Email
-            </button>
-        </header>
+            <div>
+                <button className="SW">
+                    ㅤ Sign in with Google ㅤ
+                </button>
+            </div>
+            <div>
+                <button className="SW">
+                    ㅤSign in with Facebookㅤ
+                </button>
+            </div>
+            <div>
+                <button className="SW">
+                ㅤㅤSign in with Emailㅤㅤ
+                </button>
+            </div>
+            <div>
+                No account? <h5>Create one</h5>
+            </div>
+        </div>
     )
 }
