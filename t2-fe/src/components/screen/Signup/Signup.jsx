@@ -1,29 +1,30 @@
 import React from "react";
-import './Login.css'
-
+import './Signup.css'
+import TheName from './TheName.png'
 export default function Login(){
     return(
         <div className = "Login-Button">
             <div>
-                <h1 className="CL">Welcome</h1>
+                <h1 className="CL">Join</h1>
+                <img className="TheName" src={TheName} alt="TheName" />
             </div>
             <div>
                 <button className="SW">
-                    ㅤ Sign in with Google ㅤ
+                    ㅤ Sign up with Google ㅤ
                 </button>
             </div>
             <div>
                 <button className="SW">
-                    ㅤSign in with Facebookㅤ
+                    ㅤSign up with Facebookㅤ
                 </button>
             </div>
             <div>
                 <button className="SW">
-                ㅤㅤSign in with Emailㅤㅤ
+                ㅤㅤSign up with Emailㅤㅤ
                 </button>
             </div>
             <div>
-                No account? <h5>Create one</h5>
+                Already have an account? <h5>Sign in</h5>
             </div>
         </div>
     )
