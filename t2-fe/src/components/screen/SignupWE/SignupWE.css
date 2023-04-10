@@ -1,0 +1,66 @@
+.CTN-Button{
+    width: 226px;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 99em;
+    border-color: rgba(25, 25, 25, 1);
+    background: rgba(25, 25, 25, 1);
+    fill: rgba(255, 255, 255, 1);
+    padding: 7px 16px 9px;
+    color: rgba(255, 255, 255, 1);
+    line-height: 20px;
+    font-size: 14px;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+.lineps{
+    margin-bottom: 10px;
+}
+.Inblock{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    padding: 44px 56px;
+    flex-direction: column;
+    flex: 1 0 auto;
+    justify-content: center;
+    align-items: center;
+    box-sizing: inherit;
+}
+.Allblock{
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+    background-color: antiquewhite;
+    min-height: 695px;
+    border-radius: 4px;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: inherit;
+}
+.Fonttetel{
+    font-weight:bold;
+    font-size: 25px;
+    color: #553566;
+}
+div + div{
+    margin-top: 20px;
+}
+input + div{
+    margin-top: 20px;
+}
+.Testbox{
+    font: inherit;
+    outline: none;
+    background: transparent;
+    width: 270px;
+    text-align: center;
+    border: none;
+    color: rgba(41, 41, 41, 1);
+    margin: 0;
+    box-sizing: inherit;
+    display: block;
+}
