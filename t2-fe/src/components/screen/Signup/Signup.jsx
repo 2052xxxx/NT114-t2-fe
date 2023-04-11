@@ -1,7 +1,7 @@
 import React from "react";
 import './Signup.css'
 import TheName from './TheName.png'
-export default function Login(){
+export default function Signup(){
     return(
         <div className = "Login-Button">
             <div>
