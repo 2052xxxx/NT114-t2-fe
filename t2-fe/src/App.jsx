@@ -4,6 +4,7 @@ import SubContent from './components/subContent/subContent';
 import React from 'react';
 import Login from './components/screen/Login/Login';
 import Signup from './components/screen/Signup/Signup';
+import SignupWE from './components/screen/SignupWE/SignupWE';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -13,10 +14,10 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route path="/home" element={<div> <Header/> <SubContent/></div>}/>
+          <Route path="" element={<div> <Header/> <SubContent/></div>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/signup" element={<Signup/>}/>
-        
+          <Route path="/signupWE" element={<SignupWE/>}/>        
         </Routes>
       </BrowserRouter>
 
