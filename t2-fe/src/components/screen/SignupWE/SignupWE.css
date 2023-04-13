@@ -64,3 +64,8 @@ input + div{
     box-sizing: inherit;
     display: block;
 }
+.d{
+    font-weight:bold;
+    font-size: 10px;
+    color: #553566;
+}

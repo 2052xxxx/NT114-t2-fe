@@ -11,14 +11,14 @@ export default function SignupWE(){
                 <h4>
                     Enter the email address associated with your account,<br/> and we’ll send a magic link to your inbox.
                 </h4>
-                <h5>Your email</h5>
-                <input type="text" name="String" value="Write here" className="Testbox"></input>
+                <label for="myTextbox">Your email</label>
+                <input type="text" id="myTextbox" name="myTextbox" className="Testbox"></input>
                 <div>
                     <button className="CTN-Button">
                         Countinue
                     </button>
                 </div>
-                <div>
+                <div  className="d">
                    {'<'}All  sign in options
                 </div>
             </div>
