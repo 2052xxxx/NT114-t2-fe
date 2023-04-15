@@ -2,6 +2,7 @@ import React from "react";
 import theLogo from './theLogo.png'
 import theName from './theName.png'
 import './header.css'
+import '../screen/Login/Login'
 
 export default function Header(){
     return(
@@ -14,9 +15,11 @@ export default function Header(){
                 <li>Home</li>
                 <li>About</li>
             </ul>
-            <button className="signIn">
-                Sign In
-            </button>
+            <a href="/Login">
+                <button className="signIn">
+                    Sign In
+                </button>
+            </a>
         </header>
     )
 }
