@@ -10,7 +10,7 @@ export default function Signup(){
             </div>
             <div>
                 <button className="SW">
-                    ㅤ Sign up with Google ㅤ
+                    ㅤSign up with Google ㅤ
                 </button>
             </div>
             <div>
