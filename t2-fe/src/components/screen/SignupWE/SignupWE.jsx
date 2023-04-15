@@ -8,19 +8,17 @@ export default function SignupWE(){
                 <div className="Fonttetel">
                     Sign in with email
                 </div>
-                <h4>
-                    Enter the email address associated with your account,<br/> and we’ll send a magic link to your inbox.
-                </h4>
-                <label for="myTextbox">Your email</label>
-                <input type="text" id="myTextbox" name="myTextbox" className="Testbox"></input>
+                
+                <h5>Your email</h5>
+                <input type="text" name="String" placeholder="Enter your email" className="Testbox"/>
+                <h5>Your password</h5>
+                <input type="password" name="String" placeholder="Enter your password" className="Testbox"/>
                 <div>
                     <button className="CTN-Button">
                         Countinue
                     </button>
                 </div>
-                <div  className="d">
-                   {'<'}All  sign in options
-                </div>
+                
             </div>
         </div>
     )
