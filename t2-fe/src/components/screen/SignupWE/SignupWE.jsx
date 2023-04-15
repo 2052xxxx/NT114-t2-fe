@@ -1,5 +1,7 @@
 import React from "react";
-import './SignupWE.css'
+import './SignupWE.css';
+import '../MainAfterSignin/HeaderPage/HeaderPage'
+import '../Login/Login'
 
 export default function SignupWE(){
     return(
@@ -14,11 +16,12 @@ export default function SignupWE(){
                 <h5>Your password</h5>
                 <input type="password" name="String" placeholder="Enter your password" className="Testbox"/>
                 <div>
-                    <button className="CTN-Button">
-                        Countinue
-                    </button>
+                    <a href="/HeaderPage">
+                        <button className="CTN-Button">
+                            Countinue
+                        </button>
+                    </a>
                 </div>
-                
             </div>
         </div>
     )

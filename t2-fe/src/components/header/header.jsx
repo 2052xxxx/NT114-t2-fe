@@ -3,6 +3,7 @@ import theLogo from './theLogo.png'
 import theName from './theName.png'
 import './header.css'
 import '../screen/Login/Login'
+import '../screen/SignupWE/SignupWE'
 
 export default function Header(){
     return(

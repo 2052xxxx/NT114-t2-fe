@@ -1,6 +1,6 @@
 import React from "react";
-import './Login.css'
-
+import './Login.css';
+import '../SignupWE/SignupWE';
 export default function Login(){
     return(
         <div className = "Login-Button">
@@ -8,19 +8,25 @@ export default function Login(){
                 <h1 className="CL">Welcome</h1>
             </div>
             <div>
-                <button className="SW">
-                    ㅤ Sign in with Google ㅤ
-                </button>
+                <a href="">
+                    <button className="SW">
+                        ㅤ Sign in with Google ㅤ
+                    </button>
+                </a>
             </div>
             <div>
-                <button className="SW">
-                    ㅤSign in with Facebookㅤ
-                </button>
+                <a href="">
+                    <button className="SW">
+                        ㅤSign in with Facebookㅤ
+                    </button>
+                </a>
             </div>
             <div>
-                <button className="SW">
-                ㅤㅤSign in with Emailㅤㅤ
-                </button>
+                <a href="/SignupWE">
+                    <button className="SW">
+                        ㅤㅤSign in with Emailㅤㅤ
+                    </button>
+                </a> 
             </div>
             <div>
                 No account? <h5>Create one</h5>
