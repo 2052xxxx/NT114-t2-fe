@@ -1,0 +1,30 @@
+.sub.currently-loading img { 
+    display: flex; 
+    
+}
+
+.subContent {
+    background-color: antiquewhite;
+    min-height: 70vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7vh;
+}
+
+.Content > h1{
+    color: #C19167;
+}
+
+.Content{
+    padding-right: 3.5vh;
+}
+
+.sub > img{
+    height: 70%;
+    align-items: center;
+    
+    
+    border: 4px dashed #553566;
+    border-radius: 1em;
+}
