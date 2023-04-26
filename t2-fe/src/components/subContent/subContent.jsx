@@ -11,7 +11,7 @@ export default function SubContent(){
         <div className="subContent">
             <Container className="container-md">
                 <Row>
-                    <Col className="content">  
+                    <Col className="col-md-7">  
                         <div>
                             <h1>WRITE READ WRITE</h1>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -20,7 +20,7 @@ export default function SubContent(){
                             Delectus!</p>  
                         </div>                                                
                     </Col>
-                    <Col className="content">        
+                    <Col className="col-md-5">        
                         <img className="myGIF" src={subTheGIF} alt="my Aestyle" />
                     </Col>
                 </Row>

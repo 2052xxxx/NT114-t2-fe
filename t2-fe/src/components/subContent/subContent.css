@@ -5,29 +5,29 @@ body{
 .subContent {
     background-color: antiquewhite;
     justify-content: center;
-    align-items: center;
     padding: 7vh;
 }
 
-.content >div > h1{
+.col-md-7 >div > h1{
     color: #C19167;
 }
 
 
-.content{
-    justify-content: center;
+.col-md-7, .col-md-5{
+    /* justify-content: center; */
     align-items: center;
     display: flex;
-
 }
 
 
 
 .myGIF{
     height: 80%;
-    align-items: center;
     border: 4px dashed #553566;
     border-radius: 1em;
-   
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
 }
 
