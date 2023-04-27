@@ -1,8 +1,6 @@
 import React from "react";
 import './CBlog.css';
 
-
-
 export default function CreatBlog(){
     return(
         <div className="">
