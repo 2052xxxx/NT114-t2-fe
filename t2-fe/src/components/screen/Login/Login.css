@@ -1,10 +1,15 @@
 .Login-Button{
     background-color: antiquewhite;
-    display: block;
-    padding: 7vh;
-    padding-left: 7vh;
-    padding-right: 7vh;
+    display: flex;
+    
 }
+
+.Login-Button > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .SW{
     margin: 20px;
     border-radius: 1em;

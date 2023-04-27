@@ -29,8 +29,12 @@ export default function Login(){
                 </a> 
             </div>
             <div>
-                No account? <h5>Create one</h5>
+                No account? 
+                
             </div>
+            <div>
+                    <h5>Create one</h5>
+                </div>
         </div>
     )
 }
