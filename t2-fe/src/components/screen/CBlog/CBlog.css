@@ -1,30 +1,31 @@
-.sub.currently-loading img { 
-    display: flex; 
-    
-}
 
-.subContent {
-    background-color: antiquewhite;
-    min-height: 70vh; 
+.Texbox{
+    width: 1200px;
+    height: 500px;
+    font-family:  'Times New Roman', Times, serif ;
+    font-size: 40px;
+    /* margin-bottom : 10px; */
+    border: none;
+    justify-content: center;
+}
+.UpBlog{
+    background-image: antiquewhite;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #2a1a1a;
+    display: block;
+    height: 50px;
+    font-size: 1.4em;
+    font-weight: 600;
+    padding: 4px;
+    position: relative;
+    text-decoration: none;
+    width: 7em;
+    z-index: 2;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 7vh;
-}
-
-.Content > h1{
-    color: #C19167;
-}
-
-.Content{
-    padding-right: 3.5vh;
-}
-
-.sub > img{
-    height: 70%;
-    align-items: center;
-    
-    
-    border: 4px dashed #553566;
-    border-radius: 1em;
+    border: none;
+    margin-right: 650px;
+    float: right;
+    background-color: rgba(221, 178, 133, 0.355);
 }
