@@ -3,7 +3,6 @@ import theLogo from './theLogo.png'
 import theName from './theName.png'
 import './header.css'
 import '../screen/Login/Login'
-import '../screen/SignupWE/SignupWE'
 import Login from "../screen/Login/Login";
 import Modal from 'react-bootstrap/Modal';
 
@@ -28,7 +27,6 @@ export default function Header(){
             <Modal
                 show={show}
                 onHide={handleClose}    
-                centered            
             >                
                 <Login/>
             </Modal>

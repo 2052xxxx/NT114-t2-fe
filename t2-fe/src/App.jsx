@@ -10,6 +10,7 @@ import CBlog from './components/screen/CBlog/CBlog';
 import CBlogNext from './components/screen/CBlogNext/CBlogNext';
 import Writing from './components/screen/Writing/Writing';
 import Pagez from './components/screen/MainAfterSignin/Pagez/Pagez';
+import AdHeader from './components/admin/ad-header/adHeader';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -28,9 +29,9 @@ function App() {
           <Route path="/CBlogNext" element={<CBlogNext/>}/>
           <Route path="/pagez" element={<Pagez/>}/>
           <Route path="/writing" element={<Writing/>}/>
+          <Route path="/adHeader" element={<AdHeader/>}/> 
         </Routes>
       </BrowserRouter>
-
     </div>
   );
 }
