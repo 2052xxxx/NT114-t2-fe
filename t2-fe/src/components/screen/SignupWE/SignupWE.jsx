@@ -11,12 +11,17 @@ export default function SignupWE(){
                     Sign in with email
                 </div> 
                 <div className="components">
-                    <h5>Your email</h5>
-                    <input type="text" name="String" placeholder="Enter your email" className="Testbox"/>
-                    <h5>Your password</h5>
-                    <input type="password" name="String" placeholder="Enter your password" className="Testbox"/>
+                    <div className="email">
+                        <h5>Your email</h5>
+                        <input type="text" name="String" placeholder="Enter your email" className="Testbox"/>
+                    </div>
+                    
+                    <div className="password">
+                        <h5>Your password</h5>
+                        <input type="password" name="String" placeholder="Enter your password" className="Testbox"/>
+                    </div>                    
                 </div>               
-                <div>
+                <div className="btn-continue">
                     <a href="/HeaderPage">
                         <button className="CTN-Button">
                             Countinue

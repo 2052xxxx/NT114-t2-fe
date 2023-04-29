@@ -32,9 +32,8 @@
     box-sizing: inherit;
 }
 .Allblock{
-    justify-content: center;
+    justify-content: space-between;
     display: flex;
-    height: 100vh;
     background-color: antiquewhite;
     min-height: 695px;
     border-radius: 4px;
@@ -46,10 +45,17 @@
     font-weight:bold;
     font-size: 25px;
     color: #553566;
+    padding: 1em;
 }
-div + div{
-    margin-top: 20px;
+
+.email{
+    padding-bottom: 0.5em;
 }
+
+.btn-continue{
+    padding: 1em;
+}
+
 input + div{
     margin-top: 20px;
 }
@@ -70,3 +76,4 @@ input + div{
     font-size: 10px;
     color: #4a464c;
 }
+

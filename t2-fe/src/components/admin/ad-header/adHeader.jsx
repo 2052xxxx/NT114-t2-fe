@@ -1,19 +1,21 @@
-import './adHeader.css';
 import React, {useState} from "react";
-//import theLogo from './theLogo.png'
-//import theName from './theName.png'
 import theLogo from '../../header/theLogo.png'
-import Login from "../../screen/Login/Login";
-import Modal from 'react-bootstrap/Modal';
+//import Login from "../../screen/Login/Login";
+// import Modal from 'react-bootstrap/Modal';
 //import font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faPenNib } from '@fortawesome/free-solid-svg-icons';
+import { faBell } from '@fortawesome/free-solid-svg-icons';
+import Dropdown from 'react-bootstrap/Dropdown';
+import Button from 'react-bootstrap/esm/Button';
+import './adHeader.css';
 
 export default function Header(){
-    const [show, setShow] = useState(false);
+    // const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    // const handleClose = () => setShow(false);
+    // const handleShow = () => setShow(true);
     return(
         <header className='ad-Header'>
             <div className="logo">
@@ -25,19 +27,51 @@ export default function Header(){
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
             </form>
-                <ul className="lists">
-                <li>Home</li>
-                <li>About</li>
-            </ul>
-            <button className="signIn" variant="primary" onClick={handleShow}>
-                Sign In
-            </button>
-            <Modal
+            <div className="header-components">     
+                
+                    <Button className="btn-write">
+                        <FontAwesomeIcon icon={faPenNib} />
+                        <span>Write</span>
+                    </Button>
+                    <div className="btn-noti">                    
+                        <Dropdown>
+                            <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                <FontAwesomeIcon icon={faBell} />
+                            </Dropdown.Toggle>
+
+                            <Dropdown.Menu>
+                                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+
+                    <div className="btn-ava">
+                    <Dropdown>
+                        <Dropdown.Toggle variant="success" id="dropdown-basic">                            
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                    </div>            
+                        
+                    </div>
+                    
+                
+                
+        
+                
+            </div>
+            {/* <Modal
                 show={show}
                 onHide={handleClose}    
             >                
                 <Login/>
-            </Modal>
+            </Modal> */}
         </header>
     )
 }

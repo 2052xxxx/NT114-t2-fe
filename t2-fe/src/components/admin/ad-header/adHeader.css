@@ -17,14 +17,58 @@
     height: 2em;
 }
 
-.lists {
-    list-style: none;
+.header-components {
     display: flex;
+    align-content: center;
     margin-left: auto;
+    padding: 0 1em;
 }
 
-.lists >li{
-    padding: 1em;
+.btn-write > span{
+    margin-left: 0.5em;
+}
+
+.btn-write {
+    display: flex;
+    align-items: center;
+    
+}
+
+
+.btn-noti {
+    display: flex;
+    align-items: center;
+}
+
+.btn-ava {
+    display: flex;
+    align-items: center;
+}
+
+.btn-write.btn.btn-primary {
+    background-color: #ffff;
+    color: black;
+    border-radius: 2em;
+    margin-right: 1em;
+    --bs-btn-border-color: none;
+}
+
+.btn-write.btn.btn-primary:hover {
+    background-color: #D46BCA;
+    color: white;
+}
+
+#dropdown-basic.dropdown-toggle.btn.btn-success {
+    background-color: #ffff;
+    color: black;
+    border-radius: 2em;
+    margin-right: 1em;
+    --bs-btn-border-color: none;
+}
+
+#dropdown-basic.dropdown-toggle.btn.btn-success:hover {
+    background-color: #D46BCA;
+    color: white;
 }
 
 .signIn{
