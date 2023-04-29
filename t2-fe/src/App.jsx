@@ -12,6 +12,7 @@ import Writing from './components/screen/Writing/Writing';
 import Pagez from './components/screen/MainAfterSignin/Pagez/Pagez';
 import AdHeader from './components/admin/ad-header/adHeader';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AdSidebar from './components/admin/sidebar/adSidebar';
 
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
           <Route path="/CBlogNext" element={<CBlogNext/>}/>
           <Route path="/pagez" element={<Pagez/>}/>
           <Route path="/writing" element={<Writing/>}/>
-          <Route path="/adHeader" element={<AdHeader/>}/> 
+          <Route path="/adHeader" element={<div> <AdHeader/></div>}/> 
+          <Route path="/adSidebar" element={<div> <AdSidebar/></div>}/>
         </Routes>
       </BrowserRouter>
     </div>

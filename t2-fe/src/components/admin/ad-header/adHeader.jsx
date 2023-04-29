@@ -9,6 +9,7 @@ import { faPenNib } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Button from 'react-bootstrap/esm/Button';
+import Image from 'react-bootstrap/Image';
 import './adHeader.css';
 
 export default function Header(){
@@ -48,7 +49,8 @@ export default function Header(){
 
                     <div className="btn-ava">
                     <Dropdown>
-                        <Dropdown.Toggle variant="success" id="dropdown-basic">                            
+                        <Dropdown.Toggle variant="success" id="dropdown-basic">       
+                        <Image src="holder.js/171x180" roundedCircle />
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
