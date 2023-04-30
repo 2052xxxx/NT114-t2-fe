@@ -11,9 +11,10 @@ import CBlogNext from './components/screen/CBlogNext/CBlogNext';
 import Writing from './components/screen/Writing/Writing';
 import Pagez from './components/screen/MainAfterSignin/Pagez/Pagez';
 import AdHeader from './components/admin/ad-header/adHeader';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 import AdSidebar from './components/admin/sidebar/adSidebar';
 import Admin from './components/admin/_screen/adminScreen';
+import CManagement from './components/admin/contentManagement/cManagement';
 
 
 function App() {
@@ -21,11 +22,13 @@ function App() {
     <div className="App">
       
       <BrowserRouter>
+        
         <Routes>
           <Route path="" element={<div> <Header/> <SubContent/></div>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/signup" element={<Signup/>}/>
-          <Route path="/signupWE" element={<SignupWE/>}/> 
+          <Route path="/signupWE" element={<SignupWE/>}/>          
+          <Route path="/cManagement" element={<CManagement/>}/>
           <Route path="/headerPage" element={<AdHeader/>}/>
           <Route path="/cBlog" element={<CBlog/>}/>
           <Route path="/CBlogNext" element={<CBlogNext/>}/>
@@ -33,6 +36,7 @@ function App() {
           <Route path="/writing" element={<Writing/>}/>
           <Route path="/adHeader" element={<div> <AdHeader/></div>}/> 
           <Route path="/adSidebar" element={<div> <AdSidebar/></div>}/>
+          
           <Route path="/Admin" element={<Admin/>}/>
         </Routes>
       </BrowserRouter>

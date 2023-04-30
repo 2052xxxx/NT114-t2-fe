@@ -59,21 +59,10 @@ export default function Header(){
                             <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
-                    </div>            
-                        
-                    </div>
-                    
-                
-                
-        
-                
+                    </div>                                    
+                </div>
             </div>
-            {/* <Modal
-                show={show}
-                onHide={handleClose}    
-            >                
-                <Login/>
-            </Modal> */}
+            
         </header>
     )
 }
