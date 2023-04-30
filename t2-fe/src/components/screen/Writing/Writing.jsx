@@ -1,10 +1,10 @@
 import React from "react";
-import HeaderPage from '../MainAfterSignin/HeaderPage/HeaderPage';
+import AdHeader from "../../admin/ad-header/adHeader";
 
 export default function Writing(){
     return(
         <div>
-            <HeaderPage/>
+            <AdHeader/>
             <div> 
                 <textarea rows="3" cols="70" placeholder="Title"/>
             </div>
