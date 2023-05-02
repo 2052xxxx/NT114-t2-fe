@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquarePollHorizontal } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faHeadset } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import './adSidebar.css';
 
 export default function Sidebar(){
@@ -12,23 +13,22 @@ export default function Sidebar(){
     <div className="sidebar">
       <ul className="nav flex-column">
         <li className="nav-item">
-        <a className="nav-link active" href="#">
-            <FontAwesomeIcon className='fontAwesome' icon={faSquarePollHorizontal} />
-            Content Management
-        </a>
-            
+            <Link className="nav-link" to="/cManagement">
+                <FontAwesomeIcon className='fontAwesome' icon={faSquarePollHorizontal} />
+                Content Management
+            </Link>            
         </li>
         <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link to='/usrManagement' className='nav-link' >
                 <FontAwesomeIcon className='fontAwesome' icon={faUser} />
                 User Management
-            </a>
+            </Link>
         </li>
         <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to="/usrSupport">
                 <FontAwesomeIcon className='fontAwesome' icon={faHeadset} />
                 User Support
-            </a>
+            </Link>
         </li>
       </ul>
     </div>

@@ -7,14 +7,10 @@ import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 
 const AdScreen = () => {
   return (
-    <BrowserRouter>
       <div>        
           <AdHeader />
           <Sidebar />
-            <Route path="/articles" component={Articles} />
-            <Route path="/tags" component={Tags} />
       </div>
-    </BrowserRouter>
   );
 };
 

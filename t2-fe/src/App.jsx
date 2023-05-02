@@ -15,7 +15,8 @@ import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 import AdSidebar from './components/admin/sidebar/adSidebar';
 import Admin from './components/admin/_screen/adminScreen';
 import CManagement from './components/admin/contentManagement/cManagement';
-
+import Articles from './components/admin/articles/articles';
+import Tags from './components/admin/tags/tags';
 
 function App() {
   return (
@@ -28,16 +29,17 @@ function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/signup" element={<Signup/>}/>
           <Route path="/signupWE" element={<SignupWE/>}/>          
-          <Route path="/cManagement" element={<CManagement/>}/>
+          <Route path="/cManagement" exact element={<CManagement/>}/>
           <Route path="/headerPage" element={<AdHeader/>}/>
           <Route path="/cBlog" element={<CBlog/>}/>
           <Route path="/CBlogNext" element={<CBlogNext/>}/>
           <Route path="/pagez" element={<Pagez/>}/>
           <Route path="/writing" element={<Writing/>}/>
           <Route path="/adHeader" element={<div> <AdHeader/></div>}/> 
-          <Route path="/adSidebar" element={<div> <AdSidebar/></div>}/>
-          
+          <Route path="/adSidebar" element={<div> <AdSidebar/></div>}/>          
           <Route path="/Admin" element={<Admin/>}/>
+          <Route path="/articles" element={<Articles/>}/>
+          <Route path="/tags" element={<Tags/>}/>
         </Routes>
       </BrowserRouter>
     </div>
