@@ -13,9 +13,9 @@ export default function CManagement() {
         <Container>
           <Navbar.Brand href="#home">Content Management</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Articles</Nav.Link>
+            <Nav.Link href="/Articles">Articles</Nav.Link>
 
-            <Nav.Link href="#features">Tags</Nav.Link>
+            <Nav.Link href="/Tags">Tags</Nav.Link>
           </Nav>
         </Container>
       </Navbar>    

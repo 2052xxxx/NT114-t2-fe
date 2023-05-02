@@ -1,7 +1,11 @@
 import React from "react";
+import CManagement from "../contentManagement/cManagement";
+import "./tags.css";
 
 export default function Tags() {
-    return <div className="md-5 d-flex justify-content-left">
-        <h1>This is tags</h1>
+    return <div>
+        <CManagement/>
+        
+        <h1 className="tags">This is tags</h1>
     </div>;
 }
