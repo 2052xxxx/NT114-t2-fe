@@ -4,20 +4,48 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import "./cManagement.css";
 import AdHeader from "../ad-header/adHeader";
 import Sidebar from "../sidebar/adSidebar";
+import Articles from "../articles/articles";
+import Tags from "../tags/tags";
+import { Row, Col } from "react-bootstrap";
+import { useState } from "react";
+
 
 export default function CManagement() {
-  return <div>
-      <AdHeader />
-      <Sidebar />
-    <Navbar bg="dark" variant="dark" className="navBar">
-        <Container>
-          <Navbar.Brand href="#home">Content Management</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="/Articles">Articles</Nav.Link>
+  const [selectedTag, setSelectedTag] = useState(false);
 
-            <Nav.Link href="/Tags">Tags</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>    
+  const handleBarClick = (id) => {
+    switch (id) {
+      case 'articles':
+        setSelectedTag(<Articles />);
+        break;
+      case 'tags':
+        setSelectedTag(<Tags/>);
+        break;
+      default:
+        setSelectedTag(null);
+        break;
+    }
+  }
+  return <div>
+    <Container fluid>
+      <Col>
+        <Row sm={1}>
+          <Navbar bg="dark" variant="dark" className="navBar">
+            <Container>
+              <Navbar.Brand href="#home">Content Management</Navbar.Brand>
+              <Nav className="me-auto">
+                <Nav.Link href="#Articles" onClick={() => handleBarClick('articles')}>Articles</Nav.Link>
+
+                <Nav.Link href="#Tags" onClick={() => handleBarClick('tags')}>Tags</Nav.Link>
+              </Nav>
+            </Container>
+          </Navbar>    
+        </Row>
+        <Row sm={10}>
+          {selectedTag}
+        </Row>
+      </Col>
+    </Container>
+   
   </div>;
 }
