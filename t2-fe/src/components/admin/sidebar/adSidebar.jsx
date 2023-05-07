@@ -32,7 +32,7 @@ export default function Sidebar(){
     return(
       <>
         <Row>
-          <Col sm={3}>
+          <Col sm={2}>
             <Nav defaultActiveKey="/" className="flex-column sidebar">
               <Nav.Item>
                 <Nav.Link href="#cManagement"  onClick={() => handleBarClick('cManagement')}>
@@ -52,7 +52,7 @@ export default function Sidebar(){
               </Nav.Item>
             </Nav>
           </Col>
-          <Col sm={9} className='content'> 
+          <Col sm={10} className='content'> 
             {selectedTag}
           </Col>
         </Row>   
