@@ -1,55 +1,54 @@
 import React, { Fragment } from "react";
-import CManagement from "../contentManagement/cManagement";
-import Sidebar from "../sidebar/adSidebar";
-import { Table } from "react-bootstrap";
+import { Table, Toast } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { Modal, Button, Row, Col } from "react-bootstrap";
 import axios from "axios";
-import "./articles.css";
+import "./user.css";
 
-export default function Articles() {
-
-  // const của modal
+export default function User() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   //mấy cái cũ lưu trong note
+
   //fetch data
-  const fetchArticles = () => {
+  const fetchUsers = () => {
     // Fetch article data from the API
     axios
-      .get('https://localhost:7015/api/Article/showArticle_Ad')
+      .get('https://localhost:7015/api/User/showUser_Ad')
       .then(response => {
-        setArticles(response.data);
+        setUsers(response.data);
       })
       .catch(error => {
         console.error(error);
       });
   };
-  //lấy data của article từ api
-  const [articles, setArticles] = useState([]);
+
+
+  //lấy data của user từ api
+  const [users, setUsers] = useState([]);
   useEffect(() => {
     // Fetch article data from the API
-    fetchArticles();
+    fetchUsers();
   }, []);
 
-  //edit article
-  
-  //delete article
-  
+  //xóa user
   const handleDelete = (id) => {
-    if (window.confirm('Are you sure you want to delete this article?')) {
+    if (window.confirm('Are you sure you want to delete this user?')) {
       // Perform delete operation based on the article ID
       // For example, you can make a DELETE request to the API
       axios
-        .delete(`https://localhost:7015/api/Article/deleteArticle_Ad/${id}`)
+
+        .delete(`https://localhost:7015/api/User/deleteUser/${id}`)
         .then(response => {
           // Handle successful deletion
-          console.log('Article deleted');
+          if (response.status ===200) {
+            <Toast.Body>successfully deleted user</Toast.Body>
+          }
           // Fetch article data from the API
-          fetchArticles();
+          fetchUsers();
         })
         .catch(error => {
           // Handle error
@@ -58,44 +57,37 @@ export default function Articles() {
     }
   };
 
-
   return <Fragment>
   <Table striped bordered hover size="sm" className="table">
     <thead>
       <tr>
         <th>#</th>
         <th>Id</th>
-        <th>Title</th>
-        <th>Body</th>
-        <th>Author Id</th>
-        <th>Views</th>
-        <th>Likes</th>
-        <th>Comments</th>
-        <th>Last Update</th>
+        <th>User name</th>
+        <th>Real name</th>
+        <th>Email</th>
+        <th>Avatar</th>
+        <th>Bio</th>
+        <th>Registration Date</th>
         <th>Action</th>
       </tr>
     </thead>
-    <tbody>
-      
+    <tbody>      
         {/* //trong note luôn */}
-      {articles.map(
-        (article, index) =>         
+      {users.map(
+        (user, index) =>         
         {
         return (<tr key={index}>
           <td>{index + 1}</td>
-          <td>{article.articleId}</td>
-          <td>{article.articleTitle}</td>
-          <td>{article.body}</td>
-          <td>{article.authorId}</td>
-          <td>{article.views}</td>
-          <td>{article.likes}</td>
-          <td>{article.comments}</td>
-          <td>{article.lastUpdated}</td>
-          <td>    
-            <Button className="btnEdit" variant="outline-primary" size="sm" onClick={handleShow}>
-              Edit
-              </Button>        
-            <Button className="btnDel" variant="outline-danger" size="sm" onClick={() => handleDelete(article.articleId)}>
+          <td>{user.userid}</td>
+          <td>{user.username}</td>
+          <td>{user.realname}</td>
+          <td>{user.email}</td>
+          <td>{user.avatar}</td>
+          <td>{user.bio}</td>
+          <td>{user.registrationDate}</td>
+          <td>                      
+            <Button variant="outline-danger" size="sm" onClick={() => handleDelete(user.userid)}>
               Del
             </Button>
           </td>
@@ -107,17 +99,17 @@ export default function Articles() {
   </Table>
   <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Edit Article</Modal.Title>
+        <Modal.Title>Edit</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Row>
           <Col>
-            <input type="text" className="form-control" placeholder="Title" 
+            <input type="text" className="form-control" placeholder="Title 1" 
               // value={editName} onChange={(e) => setEditName(e.target.value)}
             />
           </Col>
           <Col>
-            <input type="text" className="form-control" placeholder="Context" 
+            <input type="text" className="form-control" placeholder="Titile 2" 
             // value={editAge} onChange={(e) => setEditAge(e.target.value)}
             />
           </Col>

@@ -6,6 +6,8 @@
     border-bottom: 2px solid #D46BCA;
     padding: 1em 1em;
     background-color: #FAEFE6;
+    position: fixed;
+    width: 100%;
 }
 
 .theLogo{

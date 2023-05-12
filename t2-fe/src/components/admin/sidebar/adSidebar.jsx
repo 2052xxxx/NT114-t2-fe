@@ -6,6 +6,7 @@ import { faSquarePollHorizontal } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faHeadset } from '@fortawesome/free-solid-svg-icons';
 import CManagement from '../contentManagement/cManagement';
+import UsrManagement from '../userManagement/usrManagement';
 import { useState } from 'react';
 import './adSidebar.css';
 
@@ -18,7 +19,7 @@ export default function Sidebar(){
         setSelectedTag(<CManagement />);
         break;
       case 'usrManagement':
-        setSelectedTag(<h1>User Management</h1>);
+        setSelectedTag(<UsrManagement />);
         break;
       case 'support':
         setSelectedTag(<h1>User Support</h1>);

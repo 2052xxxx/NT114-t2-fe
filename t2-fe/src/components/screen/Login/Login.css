@@ -1,13 +1,17 @@
 .Login-Button{
-    background-color: antiquewhite;
+    background-color: #FAEFE6;
     display: flex;
     
 }
 
 .Login-Button > div{
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding: 10px 20px;
+}
+
+.loginTitle{
+   justify-content: center;
 }
 
 .SW{
@@ -20,5 +24,19 @@
 }
 .CL{
     color: #553566;
+    font-size: 30px;
+    margin-right: 5px;
 }
 
+.emailType_in{
+    padding: 10px;
+    justify-content: left;
+}
+
+.emailType_in > input, .passType_in > input{
+    margin-left: auto; 
+}
+
+.btnContinue{
+    justify-content: center;
+}
