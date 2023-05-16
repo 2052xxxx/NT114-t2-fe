@@ -1,12 +1,11 @@
 import React, {useState} from "react";
-import theLogo from '../../header/theLogo.png'
+import theLogo from '../../screen/header/theLogo.png'
 //import Login from "../../screen/Login/Login";
 // import Modal from 'react-bootstrap/Modal';
 //import font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { faPenNib } from '@fortawesome/free-solid-svg-icons';
-import { faBell } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faPenNib, faBell, faGear } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faNewspaper} from '@fortawesome/free-regular-svg-icons';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Button from 'react-bootstrap/esm/Button';
 import Image from 'react-bootstrap/Image';
@@ -50,19 +49,27 @@ export default function Header(){
                     <div className="btn-ava">
                     <Dropdown>
                         <Dropdown.Toggle variant="success" id="dropdown-basic">       
-                        <Image src="holder.js/171x180" roundedCircle />
+                            <Image src="holder.js/171x180" roundedCircle />
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                            <Dropdown.Item href="#/action-1">
+                                <FontAwesomeIcon icon={faUser} style={{color: "#d46bca",}} />
+                                <span> Profile </span>
+                            </Dropdown.Item>
+                            <Dropdown.Item href="#/action-2">
+                                <FontAwesomeIcon icon={faNewspaper} style={{color: "#d46bca",}}/>
+                                <span> Articles </span>
+                            </Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">
+                                <FontAwesomeIcon icon={faGear} style={{color: "#d46bca",}}/>
+                                <span> Settings </span>
+                            </Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                     </div>                                    
                 </div>
             </div>
-            
         </header>
     )
 }
