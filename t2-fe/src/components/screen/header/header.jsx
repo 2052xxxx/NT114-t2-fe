@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import theLogo from './theLogo.png'
-import theName from './theName.png'
+import theName from './name.png'
 import './header.css'
-import '../screen/Login/Login'
-import Login from "../screen/Login/Login";
+import '../Login/Login'
+import Login from "../Login/Login";
 import Modal from 'react-bootstrap/Modal';
 
 export default function Header(){

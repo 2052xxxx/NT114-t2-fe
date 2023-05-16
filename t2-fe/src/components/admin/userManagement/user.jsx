@@ -45,14 +45,14 @@ export default function User() {
         .then(response => {
           // Handle successful deletion
           if (response.status ===200) {
-            <Toast.Body>successfully deleted user</Toast.Body>
+            <Toast.Body>Successfully deleted user</Toast.Body>
           }
           // Fetch article data from the API
           fetchUsers();
         })
         .catch(error => {
           // Handle error
-          console.error(error);
+          <Toast.Body>Failed to delete user</Toast.Body>
         });
     }
   };

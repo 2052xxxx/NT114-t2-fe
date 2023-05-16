@@ -14,7 +14,8 @@
 }
 
 .SW{
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     border-radius: 1em;
     padding: 10px;
     border-color: #553566;
@@ -27,15 +28,23 @@
     margin-right: 5px;
 }
 
-.emailType_in{
+.emailType_in, .passType_in{
+    display: flex;
     padding: 10px;
-    justify-content: left;
+    align-content: center;
 }
 
 .emailType_in > input, .passType_in > input{
-    margin-left: auto; 
+    margin-left: auto;
+}
+
+.emailType_in > h5, .passType_in > h5{
+    color: #553566;
 }
 
 .btnContinue{
+    padding-top: 10px;
+    display: flex;
     justify-content: center;
+    align-content: center;
 }
