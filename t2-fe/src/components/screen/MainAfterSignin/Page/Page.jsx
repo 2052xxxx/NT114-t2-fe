@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './Pagez.css'
+
 export default class Page extends Component {
   render() {
     return (

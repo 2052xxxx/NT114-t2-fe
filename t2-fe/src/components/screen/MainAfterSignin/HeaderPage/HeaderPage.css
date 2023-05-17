@@ -4,7 +4,7 @@
     align-items: center;
     border-bottom: 2px solid #D46BCA;
     padding: 1em 1em;
-    background-color: rgba(221, 178, 133, 0.355);
+    background-color: #ffff;
 }
 .theLogo{
     height: 4em;
@@ -36,8 +36,7 @@
 }
 .button_1{
     border: none;
-    background-color:  rgba(221, 178, 133, 0.355);
-    border-radius: 65px;
+    background-color:  #ffff;
 }
 .viet{
     margin-top: 10px;
@@ -45,7 +44,7 @@
 }
 .button_2{
     border: none;
-    background-color: rgba(221, 178, 133, 0.355);
+    background-color: whitesmoke;
     border-radius: 2em;
    
 }

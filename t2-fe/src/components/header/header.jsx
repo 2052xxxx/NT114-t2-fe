@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import theLogo from './theLogo.png'
-import theName from './name.png'
+import theName from './theName.png'
 import './header.css'
-import '../Login/Login'
-import Login from "../Login/Login";
+import '../screen/Login/Login'
+import '../screen/SignupWE/SignupWE'
+import Login from "../screen/Login/Login";
 import Modal from 'react-bootstrap/Modal';
 
 export default function Header(){
@@ -27,8 +28,7 @@ export default function Header(){
             <Modal
                 show={show}
                 onHide={handleClose}    
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
+                centered            
             >                
                 <Login/>
             </Modal>

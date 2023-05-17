@@ -1,21 +1,17 @@
 .Login-Button{
-    background-color: #FAEFE6;
+    background-color: antiquewhite;
     display: flex;
+    
 }
 
 .Login-Button > div{
     display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 10px 20px;
-}
-
-.loginTitle{
-   justify-content: center;
 }
 
 .SW{
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 20px;
     border-radius: 1em;
     padding: 10px;
     border-color: #553566;
@@ -24,27 +20,5 @@
 }
 .CL{
     color: #553566;
-    font-size: 30px;
-    margin-right: 5px;
 }
 
-.emailType_in, .passType_in{
-    display: flex;
-    padding: 10px;
-    align-content: center;
-}
-
-.emailType_in > input, .passType_in > input{
-    margin-left: auto;
-}
-
-.emailType_in > h5, .passType_in > h5{
-    color: #553566;
-}
-
-.btnContinue{
-    padding-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
