@@ -2,77 +2,90 @@ import React from "react";
 import './Login.css';
 import { Row, Col, Container } from "react-bootstrap";
 import theName from '../header/name.png';
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { toast } from "react-toastify";
 import axios from "axios";
 
 export default function Login(){
+    // constructor(props) {
+    //     super(props);
+        
+    //     this.state = {
+    //       Email:'',
+    //       Password:'',
+          
+    //     };
+    //     this.Email = this.Email.bind(this);
+    //     this.Password = this.Password.bind(this);
+    //     this.login = this.login.bind(this);
+    // }
 
-     //fetch data
-  const fetchUsers = () => {
-    // Fetch article data from the API
-    axios
-      .get('https://localhost:7015/api/User/showUser_Ad')
-      .then(response => {
-        setUsers(response.data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  };
+    // Email(event) {
+    //             this.setState({ Email: event.target.value })
+    //         }
+    //         Password(event) {
+    //             this.setState({ Password: event.target.value })
+    //         }
+    //         login(event) {
+    //             debugger;
+    //             fetch('https://localhost:7015/api/User/signIn', {
+    //                 method: 'post',
+    //                 headers: {
+    //                     'Accept': 'application/json',
+    //                     'Content-Type': 'application/json'
+    //                 },
+    //                 body: JSON.stringify({
+    //                     Email: this.state.Email,
+    //                     Password: this.state.Password
+    //                 })
+    //             }).then((Response) => Response.json())
+    //                 .then((result) => {
+    //                     console.log(result);
+    //                     if (result.Status === 'Invalid')
+    //                         alert('Invalid User');
+    //                     else
+    //                         this.props.history.push("/HeaderPage");
+    //                 })
+    //         }
+    // render() {
 
-
-  //lấy data của user từ api
-  const [users, setUsers] = useState([]);
-  useEffect(() => {
-    // Fetch article data from the API
-    fetchUsers();
-  }, []);
-
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    
-    //login
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            // Send login request to the API
-            const response = await axios.post('https://localhost:7015/api/User/signIn', {
-                email,
-                password
-            });
-            // Login successful
-            // Redirect to new page
-            if (response.data.success) {
-                // Login successful
-                // Redirect to new page
-                window.location.href = "/HeaderPage"; // Replace with your desired page URL
-              } else {
-                // Login unsuccessful
-                window.confirm("Invalid email or password"); // Show error toast
-              }
-        } catch (error) {
-            // Login unsuccessful
-            window.confirm("An error occurred while logging in");
-        }
-        // Reset form fields
-        setEmail('');
-        setPassword('');
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const handleLogin = async () => {
+      try {
+        // Gửi yêu cầu đăng nhập đến API
+        const response = await axios.post("https://localhost:7015/api/User/signIn", {
+          email,
+          password,
+        });
+        
+        // Đăng nhập thành công
+        // Chuyển hướng đến trang mới
+        
+        window.location.href = "/HeaderPage"; // Thay thế bằng URL của trang bạn muốn chuyển hướng
+      } catch (error) {
+        // Đăng nhập không thành công
+        toast.error("Đăng nhập không thành công. Vui lòng kiểm tra lại thông tin đăng nhập.");
+      }
     };
-
-
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      handleLogin();
+    };
     return(
         <div className="Login-Button">
             <div className="loginTitle">
                 <h1 className="CL">Welcome</h1> 
                 <img className="theName" src={theName} alt="theName" />
             </div> 
-            <form  onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div className="emailType_in">
                     <h5>Your email</h5>
-                    <input  type="text" 
-                            placeholder="Enter your email" 
-                            className="Testbox"
-                            value={email} onChange={(e) => setEmail(e.target.value)}
+                    <input  type="email"
+                            placeholder="Email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             required/>
                 </div>
                 
@@ -81,18 +94,45 @@ export default function Login(){
                     <input  type="password"
                             placeholder="Enter your password" 
                             className="Testbox"
-                            value={password} onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             required/>
                 </div>  
                 <div className="btnContinue">
                 {/* <a href="/Signup">
                     <h5>Create one</h5>
                 </a> */}
-                    <button className="SW">
+                    <button className="SW" type="submit">
                         Continue
                     </button>
             </div>           
             </form>
         </div>
     )
+    // const [email, setEmail] = useState("");
+    // const [password, setPassword] = useState("");
+  
+    // const handleLogin = async () => {
+    //   try {
+    //     // Gửi yêu cầu đăng nhập đến API
+    //     const response = await axios.post("https://localhost:7015/api/User/signIn", {
+    //       email,
+    //       password,
+    //     });
+        
+    //     // Đăng nhập thành công
+    //     // Chuyển hướng đến trang mới
+        
+    //     window.location.href = "/HeaderPage"; // Thay thế bằng URL của trang bạn muốn chuyển hướng
+    //   } catch (error) {
+    //     // Đăng nhập không thành công
+    //     toast.error("Đăng nhập không thành công. Vui lòng kiểm tra lại thông tin đăng nhập.");
+    //   }
+    // };
+  
+    // const handleSubmit = (e) => {
+    //   e.preventDefault();
+    //   handleLogin();
+    // };
+            // }
 }

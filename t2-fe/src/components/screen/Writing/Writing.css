@@ -1,14 +1,23 @@
-.Writing{
+.Writing > Form{
     /* display: flex;
     flex-direction: column; */
-    justify-content: center;
-    padding: 20px 20px;
 }
 
-.writeTitle, .writeContent{
+.writing-form{
+    padding: 118px 20px 20px 20px;
+
+}
+
+.form-control.writeTitle{
+    font-size: 20px;
     margin-bottom: 20px;
 }
 
-.Writing > .form-control{
-    font-size: 100px;
+.writeContent{
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.emailType_in input, .passType_in input {
+    overflow-wrap: break-word;
 }

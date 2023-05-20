@@ -29,10 +29,12 @@ export default function Header(){
             </form>
             <div className="header-components">     
                 
-                    <Button className="btn-write">
-                        <FontAwesomeIcon icon={faPenNib} />
-                        <span>Write</span>
-                    </Button>
+                    <a href="/Writing">
+                        <Button className="btn-write">
+                            <FontAwesomeIcon icon={faPenNib} />
+                            <span>Write</span>
+                        </Button>
+                    </a>
                     <div className="btn-noti">                    
                         <Dropdown>
                             <Dropdown.Toggle variant="success" id="dropdown-basic">
