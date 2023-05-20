@@ -28,7 +28,7 @@ export default function Header(){
                 show={show}
                 onHide={handleClose}    
                 aria-labelledby="contained-modal-title-vcenter"
-                centered
+                centered            
             >                
                 <Login/>
             </Modal>
