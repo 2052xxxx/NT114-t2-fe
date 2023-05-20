@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './Login.css';
 import { Row, Col, Container } from "react-bootstrap";
 import theName from '../header/name.png';
 import { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
+
 
 export default function Login(){
     // constructor(props) {
@@ -48,38 +50,51 @@ export default function Login(){
     //                 })
     //         }
     // render() {
-
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const handleLogin = async () => {
-      try {
+    
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    
+    
+    const handleLogin = () => {
+      const data = {
+        
+        "email" : email,
+        "password" : password
+      };
+      // try {
         // Gửi yêu cầu đăng nhập đến API
-        const response = await axios.post("https://localhost:7015/api/User/signIn", {
-          email,
-          password,
+        axios.post("https://localhost:7015/api/User/signIn", data)
+        .then((response) => {
+          console.log(response);
+          if (response.status === 200) {
+             window.location.assign("/HeaderPage");
+          }
+        })
+        .catch((error) => {
+          if (window.confirm("Login failed. Please check your login information.")===true)
+           //form.reset();
+            window.location.assign("/")
+           ;
         });
+
         
         // Đăng nhập thành công
         // Chuyển hướng đến trang mới
         
-        window.location.href = "/HeaderPage"; // Thay thế bằng URL của trang bạn muốn chuyển hướng
-      } catch (error) {
-        // Đăng nhập không thành công
-        toast.error("Đăng nhập không thành công. Vui lòng kiểm tra lại thông tin đăng nhập.");
-      }
+      //window.location.href= "/HeaderPage"; // Thay thế bằng URL của trang bạn muốn chuyển hướng
+      // } catch (error) {
+      //   // Đăng nhập không thành công
+      //   toast.error("Đăng nhập không thành công. Vui lòng kiểm tra lại thông tin đăng nhập.");
+      // }
     };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      handleLogin();
-    };
+
     return(
         <div className="Login-Button">
             <div className="loginTitle">
                 <h1 className="CL">Welcome</h1> 
                 <img className="theName" src={theName} alt="theName" />
             </div> 
-            <form onSubmit={handleSubmit}>
+            <form >
                 <div className="emailType_in">
                     <h5>Your email</h5>
                     <input  type="email"
@@ -102,37 +117,11 @@ export default function Login(){
                 {/* <a href="/Signup">
                     <h5>Create one</h5>
                 </a> */}
-                    <button className="SW" type="submit">
+                    <button className="SW" onClick={handleLogin}>
                         Continue
                     </button>
             </div>           
             </form>
         </div>
     )
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
-  
-    // const handleLogin = async () => {
-    //   try {
-    //     // Gửi yêu cầu đăng nhập đến API
-    //     const response = await axios.post("https://localhost:7015/api/User/signIn", {
-    //       email,
-    //       password,
-    //     });
-        
-    //     // Đăng nhập thành công
-    //     // Chuyển hướng đến trang mới
-        
-    //     window.location.href = "/HeaderPage"; // Thay thế bằng URL của trang bạn muốn chuyển hướng
-    //   } catch (error) {
-    //     // Đăng nhập không thành công
-    //     toast.error("Đăng nhập không thành công. Vui lòng kiểm tra lại thông tin đăng nhập.");
-    //   }
-    // };
-  
-    // const handleSubmit = (e) => {
-    //   e.preventDefault();
-    //   handleLogin();
-    // };
-            // }
 }
