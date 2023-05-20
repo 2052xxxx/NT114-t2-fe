@@ -6,60 +6,21 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 
 export default function Login(){
-    // constructor(props) {
-    //     super(props);
-        
-    //     this.state = {
-    //       Email:'',
-    //       Password:'',
-          
-    //     };
-    //     this.Email = this.Email.bind(this);
-    //     this.Password = this.Password.bind(this);
-    //     this.login = this.login.bind(this);
-    // }
-
-    // Email(event) {
-    //             this.setState({ Email: event.target.value })
-    //         }
-    //         Password(event) {
-    //             this.setState({ Password: event.target.value })
-    //         }
-    //         login(event) {
-    //             debugger;
-    //             fetch('https://localhost:7015/api/User/signIn', {
-    //                 method: 'post',
-    //                 headers: {
-    //                     'Accept': 'application/json',
-    //                     'Content-Type': 'application/json'
-    //                 },
-    //                 body: JSON.stringify({
-    //                     Email: this.state.Email,
-    //                     Password: this.state.Password
-    //                 })
-    //             }).then((Response) => Response.json())
-    //                 .then((result) => {
-    //                     console.log(result);
-    //                     if (result.Status === 'Invalid')
-    //                         alert('Invalid User');
-    //                     else
-    //                         this.props.history.push("/HeaderPage");
-    //                 })
-    //         }
-    // render() {
-    
+  const [loggedIn, setLoggedIn] = useState(false);    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     
     
-    const handleLogin = () => {
+    const handleLogin = async (e) => {
+      e.preventDefault();
       const data = {
         
         "email" : email,
-        "password" : password
+        "password" : password,
       };
       // try {
         // Gửi yêu cầu đăng nhập đến API
@@ -67,7 +28,7 @@ export default function Login(){
         .then((response) => {
           console.log(response);
           if (response.status === 200) {
-             window.location.assign("/HeaderPage");
+              setLoggedIn(true);
           }
         })
         .catch((error) => {
@@ -76,7 +37,7 @@ export default function Login(){
             window.location.assign("/")
            ;
         });
-
+        
         
         // Đăng nhập thành công
         // Chuyển hướng đến trang mới
@@ -87,6 +48,18 @@ export default function Login(){
       //   toast.error("Đăng nhập không thành công. Vui lòng kiểm tra lại thông tin đăng nhập.");
       // }
     };
+    useEffect(() => {
+      if (loggedIn) {
+        // Chuyển hướng sau khi xử lý thành công
+        console.log("Redirecting...");
+      }
+    }, [loggedIn]);
+  
+    // Nếu đã đăng nhập, chuyển hướng đến "/HeaderPage"
+    if (loggedIn) {
+      return window.location.assign("/HeaderPage");
+    }
+
 
     return(
         <div className="Login-Button">
@@ -94,7 +67,7 @@ export default function Login(){
                 <h1 className="CL">Welcome</h1> 
                 <img className="theName" src={theName} alt="theName" />
             </div> 
-            <form >
+            <form  onSubmit={handleLogin}>
                 <div className="emailType_in">
                     <h5>Your email</h5>
                     <input  type="email"
@@ -117,7 +90,7 @@ export default function Login(){
                 {/* <a href="/Signup">
                     <h5>Create one</h5>
                 </a> */}
-                    <button className="SW" onClick={handleLogin}>
+                    <button className="SW" type="submit">
                         Continue
                     </button>
             </div>           
