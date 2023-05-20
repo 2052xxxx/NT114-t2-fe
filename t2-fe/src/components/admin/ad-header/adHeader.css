@@ -1,0 +1,115 @@
+
+.ad-Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #D46BCA;
+    padding: 1em 1em;
+    background-color: #FAEFE6;
+    position: fixed;
+    width: 100%;
+}
+
+.theLogo{
+    height: 4em;
+    margin-right: 1em;
+}
+
+.theName {
+    height: 2em;
+}
+
+.header-components {
+    display: flex;
+    align-content: center;
+    margin-left: auto;
+    padding: 0 1em;
+}
+
+.btn-write > span{
+    margin-left: 0.5em;
+}
+
+.btn-write {
+    display: flex;
+    align-items: center;
+    
+}
+
+
+.btn-noti {
+    display: flex;
+    align-items: center;
+}
+
+.btn-ava {
+    display: flex;
+    align-items: center;
+}
+
+.btn-write.btn.btn-primary {
+    background-color: #ffff;
+    color: black;
+    border-radius: 2em;
+    margin-right: 1em;
+    --bs-btn-border-color: none;
+}
+
+.btn-write.btn.btn-primary:hover {
+    background-color: #D46BCA;
+    color: white;
+}
+
+#dropdown-basic.dropdown-toggle.btn.btn-success {
+    background-color: #ffff;
+    color: black;
+    border-radius: 2em;
+    margin-right: 1em;
+    --bs-btn-border-color: none;
+}
+
+#dropdown-basic.dropdown-toggle.btn.btn-success:hover {
+    background-color: #D46BCA;
+    color: white;
+}
+
+.signIn{
+    margin: 1em;
+    border-radius: 1em;
+    padding: 10px;
+    border-color: #553566;
+    background-color: #553566;
+    color: #ffff;
+}
+
+.search-box{
+    background: white;
+    border-radius: 20px;
+}
+
+.search-box .search-text{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 13px;
+    padding: 0px;
+    width: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.search-box:hover > .search-text, .search-box > .search-text:valid
+{
+    width: 240px;
+    padding: 10px 0px 10px 15px;
+}
+
+.search-box .search-btn{
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    background: none;
+    padding: 15px;
+    font-size: 13px;
+    cursor: pointer;
+}

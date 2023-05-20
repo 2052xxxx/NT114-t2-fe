@@ -1,0 +1,19 @@
+.font_1{
+    font-size: 25px;
+    font-weight: bold;
+}
+.Publish_blog{
+    margin: 1em;
+    border-radius: 1em;
+    padding: 10px;
+    border-color: #553566;
+    background-color: #553566;
+    color: #ffff;
+}
+.Data_blog{
+    width: 600px;
+    height: 300px;  
+}
+.Size{
+    width: 600px;
+}

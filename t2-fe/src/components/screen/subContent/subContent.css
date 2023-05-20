@@ -1,0 +1,33 @@
+body{
+    background-color: #FAEFE6;
+}
+
+.subContent {
+    background-color: #FAEFE6;
+    justify-content: center;
+    padding: 7vh;
+}
+
+.col-md-7 >div > h1{
+    color: #C19167;
+}
+
+
+.col-md-7, .col-md-5{
+    /* justify-content: center; */
+    align-items: center;
+    display: flex;
+}
+
+
+
+.myGIF{
+    height: 80%;
+    border: 4px dashed #553566;
+    border-radius: 1em;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
+}
+

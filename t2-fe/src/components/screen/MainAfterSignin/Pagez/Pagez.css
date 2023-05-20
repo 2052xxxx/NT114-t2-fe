@@ -1,0 +1,83 @@
+.AllPage{
+    display: block;
+}
+.TagRecoment{
+    z-index: 499;
+    top: 57px;
+    position: sticky;
+    background-color: rgba(255, 255, 255, 1);
+}
+.BlockTagRecoment{
+    justify-content: center;
+    display: flex;
+}
+.IBTRcmt{
+    max-width: 680px;
+    margin: 0 24px;
+    min-width: 0;
+    width: 100%;
+}
+.BHRcmt{
+    height: 16px;
+    display: block;
+}
+.Underspace{
+    height: 39px;
+    box-shadow: rgb(230, 230, 230) 0px -1px 0px inset;
+    overflow: hidden;
+    position: relative;
+    display: block;
+}
+.TagandSta{
+    padding: 2px 0px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    align-items: center;
+    display: flex;
+}
+.Tagprivce{
+    display: flex;
+}
+.TagRcmt{
+    min-width: max-content;
+    margin-right: 24px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    padding-bottom: 16px;
+    display: block;
+}
+.InTagRcmt{
+    padding: 0px;
+    border: none;
+    cursor: pointer;
+}
+.p_tag{
+    color: rgba(41, 41, 41, 1);
+    font-size: 14px;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 20px;
+    font-weight: 400;
+}
+.Class_button{
+    border: 0px;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+.Class_next{
+    opacity: 1;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.75) 25%, rgba(255, 255, 255, 0.9) 50%, rgb(255, 255, 255) 75%);
+    transition: opacity 0.3s ease-in-out 0s;
+    pointer-events: none;
+    padding-left: 42px;
+    bottom: 12px;
+    right: 0px;
+    position: absolute;
+    top: 0;
+    align-items: center;
+    display: flex;
+}
+.button-container{
+    display: inline-block;
+}

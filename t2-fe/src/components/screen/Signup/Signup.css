@@ -1,0 +1,18 @@
+.Login-Button{
+    background-color: #FAEFE6;
+    display: block;
+    padding: 20px 10px;
+    padding-left: 7vh;
+    padding-right: 7vh;
+}
+.SW{
+    border-radius: 1em;
+    border-color: #553566;
+    background-color: #553566;
+}
+.CL{
+    color: #553566;
+}
+.TheName {
+    height: 2em;
+}

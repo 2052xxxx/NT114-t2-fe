@@ -1,0 +1,64 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #D46BCA;
+    padding: 1em 1em;
+    background-color: rgba(221, 178, 133, 0.355);
+}
+.theLogo{
+    height: 4em;
+}
+.container {
+    display: flex;
+}  
+.Tbox{
+    text-align: center;
+    font: inherit;
+    outline: border;
+    background: transparent;
+    background-color: white;
+    border: none;
+    color: rgba(41, 41, 41, 1);
+    margin:0;
+    box-sizing: inherit;
+    display: block;
+    width: 120%;
+    height: 50%;
+    border-radius: 1em;
+    background-color: whitesmoke;
+}
+.kinhlup{
+    height: 2em;
+}
+.item{
+    flex: 1;
+}
+.button_1{
+    border: none;
+    background-color:  rgba(221, 178, 133, 0.355);
+    border-radius: 65px;
+}
+.viet{
+    margin-top: 10px;
+    height: 2em;
+}
+.button_2{
+    border: none;
+    background-color: rgba(221, 178, 133, 0.355);
+    border-radius: 2em;
+   
+}
+.chuong{
+    height: 2em;
+    margin-top: -30px;
+    margin-left: -70px;
+}
+.left{
+    margin-left: -130px;
+}
+.Avata{
+    height:2em;
+    margin-top: -30px;
+    border-radius: 50%
+}
