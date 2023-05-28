@@ -59,8 +59,6 @@ export default function Login(){
     if (loggedIn) {
       return window.location.assign("/HeaderPage");
     }
-
-
     return(
         <div className="Login-Button">
             <div className="loginTitle">
