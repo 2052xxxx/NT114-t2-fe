@@ -10,6 +10,7 @@ import { Redirect } from "react-router-dom";
 
 
 export default function Login(){
+  
   const [loggedIn, setLoggedIn] = useState(false);    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -17,6 +18,9 @@ export default function Login(){
     
     const handleLogin = async (e) => {
       e.preventDefault();
+      // /**
+      //  * @type {Object} data
+      //  */
       const data = {
         
         "email" : email,
@@ -28,11 +32,16 @@ export default function Login(){
         .then((response) => {
           console.log(response);
           if (response.status === 200) {
-              setLoggedIn(true);
+            // Đăng nhập thành công, lưu thông tin user và access token vào localStorage 
+            localStorage.setItem('token', response.data);
+            setLoggedIn(true);
+          }
+          else if (response.status === 401) {
+            window.confirm("Login failed. Please check your login information.");
           }
         })
         .catch((error) => {
-          if (window.confirm("Login failed. Please check your login information.")===true)
+          if (window.confirm("Bật api chưa?, bật rồi thì lỗi api rồi nha.")===true)
            //form.reset();
             window.location.assign("/")
            ;
