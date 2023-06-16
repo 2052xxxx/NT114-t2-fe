@@ -1,10 +1,9 @@
 .Login-Button{
     background-color: #FAEFE6;
     display: block;
-    padding: 20px 10px;
-    padding-left: 7vh;
-    padding-right: 7vh;
+    padding: 20px;
 }
+
 .SW{
     border-radius: 1em;
     border-color: #553566;
@@ -16,3 +15,7 @@
 .TheName {
     height: 2em;
 }
+
+/* .loginTitle > h5{
+    align-items: center;
+} */

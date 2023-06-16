@@ -4,27 +4,18 @@ import TheName from './TheName.png'
 export default function Signup(){
     return(
         <div className = "Login-Button">
-            <div>
+            <div className="loginTitle">
                 <h1 className="CL">Join</h1>
                 <img className="TheName" src={TheName} alt="TheName" />
             </div>
-            <div>
+           
+            <div className="loginTitle">
                 <button className="SW">
-                    ㅤSign up with Google ㅤ
+                ㅤㅤRegister with Emailㅤㅤ
                 </button>
             </div>
-            <div>
-                <button className="SW">
-                    ㅤSign up with Facebookㅤ
-                </button>
-            </div>
-            <div>
-                <button className="SW">
-                ㅤㅤSign up with Emailㅤㅤ
-                </button>
-            </div>
-            <div>
-                Already have an account? <h5>Sign in</h5>
+            <div className="loginTitle">
+                <a href="">Already have an account?</a>
             </div>
         </div>
     )

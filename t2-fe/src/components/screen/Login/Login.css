@@ -1,6 +1,7 @@
 .Login-Button{
     background-color: #FAEFE6;
     display: flex;
+    padding: 20px;
 }
 
 .Login-Button > div{
@@ -11,6 +12,7 @@
 
 .loginTitle{
    justify-content: center;
+   align-items: center;
 }
 
 .SW{
@@ -42,7 +44,7 @@
     color: #553566;
 }
 
-.btnContinue{
+.btnContinue, .btnContinue > p{
     padding-top: 10px;
     display: flex;
     justify-content: center;
