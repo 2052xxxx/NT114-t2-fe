@@ -37,8 +37,9 @@ html, body {
 }
 
 .thePeople > img{
-    border: 4px dashed #553566;
+    /* border: 4px dashed #ffdcdc; */
     border-radius: 1em;
+    background-color: #553566;
 }
 
 .text-muted{

@@ -1,7 +1,7 @@
 import React from "react";
 import './Signup.css'
 import TheName from './TheName.png';
-import thePeople from './thePeople.jpg';
+import thePeople from './thePeople.png';
 import { Form, Container, Row, Col } from 'react-bootstrap';
 export default function Signup(){
     return(
