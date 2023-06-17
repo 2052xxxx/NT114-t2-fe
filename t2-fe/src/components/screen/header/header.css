@@ -34,3 +34,13 @@ header {
     background-color: #553566;
     color: #ffff;
 }
+
+.signUp{
+    margin-right: 1em;
+    margin-left: 0.75em;
+    border-radius: 1em;
+    padding: 10px;
+    border-color: #D46BCA;
+    background-color: white;
+    color: black;
+}

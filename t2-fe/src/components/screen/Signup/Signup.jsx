@@ -14,9 +14,7 @@ export default function Signup(){
                 ㅤㅤRegister with Emailㅤㅤ
                 </button>
             </div>
-            <div className="loginTitle">
-                <a href="">Already have an account?</a>
-            </div>
+            
         </div>
     )
 }
