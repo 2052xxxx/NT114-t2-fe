@@ -4,17 +4,14 @@ import theName from './name.png'
 import './header.css'
 import '../Login/Login'
 import Login from "../Login/Login";
-import Signup from "../Signup/Signup";
 import Modal from 'react-bootstrap/Modal';
+import { Link } from "react-router-dom";
 
 export default function Header(){
     const [showSignIn, setShowSignIn] = useState(false);
     const handleCloseSignIn = () => setShowSignIn(false);
     const handleShowSignIn = () => setShowSignIn(true);
 
-    const [showSignUp, setShowSignUp] = useState(false);
-    const handleCloseSignUp = () => setShowSignUp(false);
-    const handleShowSignUp = () => setShowSignUp(true);
     return(
         <header>
             <div className="logo">
@@ -25,12 +22,15 @@ export default function Header(){
                 <li>Home</li>
                 <li>About</li>
             </ul>
-            <button className="signIn" variant="primary" onClick={handleShowSignIn}>
+            <button className="signIn " variant="primary" onClick={handleShowSignIn}>
                 Sign In
             </button>
-            <button className="signUp" variant="primary" onClick={handleShowSignUp}>
-                Sign Up
-            </button>
+            <Link to = '/Signup'>
+                <button className="signUp" variant="primary">
+                    Sign Up
+                </button>
+            </Link>
+            
             <Modal
                 show={showSignIn}
                 onHide={handleCloseSignIn}    
@@ -39,14 +39,7 @@ export default function Header(){
             >                
                 <Login/>
             </Modal>
-            {/* <Modal
-                show={showSignUp}
-                onHide={handleCloseSignUp}    
-                aria-labelledby="contained-modal-title-vcenter"
-                centered            
-            >                
-                <Signup/>
-            </Modal> */}
+            
         </header>
     )
 }

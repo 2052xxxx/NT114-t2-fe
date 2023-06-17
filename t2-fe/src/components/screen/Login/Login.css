@@ -14,10 +14,9 @@
 }
 
 .SW{
-    margin-left: 20px;
-    margin-right: 20px;
+    
     border-radius: 1em;
-    padding: 10px;
+    padding: 10px 20px;
     border-color: #553566;
     background-color: #553566;
     color: #ffff;
@@ -30,7 +29,7 @@
 
 .emailType_in, .passType_in{
     display: flex;
-    padding: 10px;
+    padding-top: 10px;
     align-content: center;
 }
 
@@ -43,7 +42,7 @@
 }
 
 .btnContinue{
-    padding-top: 10px;
+    padding-top: 20px;
     display: flex;
     justify-content: center;
     align-content: center;

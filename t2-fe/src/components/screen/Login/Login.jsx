@@ -99,7 +99,7 @@ export default function Login(){
                 </a> */}
                     <button className="SW" type="submit">
                         Continue
-                    </button>
+                    </button> 
             </div>           
             </form>
         </div>

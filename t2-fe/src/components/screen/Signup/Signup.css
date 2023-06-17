@@ -1,21 +1,46 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 .Login-Button{
-    background-color: #FAEFE6;
-    display: block;
-    padding: 20px;
+    /* /* display: block; */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-.SW{
-    border-radius: 1em;
-    border-color: #553566;
-    background-color: #553566;
-}
+
 .CL{
     color: #553566;
 }
 .TheName {
-    height: 2em;
+    height: 1.5em;
 }
 
-/* .loginTitle > h5{
+.Col-2{
+    padding:0px 40px;
+}
+
+.Col-1{
+    padding-right: 20px;
+}
+
+.thePeople{
+    display: flex;
     align-items: center;
-} */
+    justify-content: center;
+    height: 60vh;
+    
+}
+
+.thePeople > img{
+    border: 4px dashed #553566;
+    border-radius: 1em;
+}
+
+.text-muted{
+    margin-right: auto;
+}

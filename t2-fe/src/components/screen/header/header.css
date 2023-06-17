@@ -44,3 +44,7 @@ header {
     background-color: white;
     color: black;
 }
+
+.signIn, .signUp{
+    width: 90px;
+}
