@@ -12,7 +12,7 @@ header {
     height: 4em;
 }
 
-.theName {
+.logo > .theName {
     height: 2em;
 }
 

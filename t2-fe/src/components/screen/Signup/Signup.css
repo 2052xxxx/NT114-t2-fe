@@ -1,10 +1,9 @@
-html, body {
+/* html, body {
     height: 100%;
     margin: 0;
     padding: 0;
   }
-.Login-Button{
-    /* /* display: block; */
+.SignUp-Button{
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -37,11 +36,67 @@ html, body {
 }
 
 .thePeople > img{
-    /* border: 4px dashed #ffdcdc; */
     border-radius: 1em;
     background-color: #553566;
 }
 
 .text-muted{
     margin-right: auto;
+} */
+
+.SignUp-Button{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #FAEFE6;
+
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FAEFE6;
+  }
+
+  .CL{
+    color: #553566;
+}
+
+.CL > .TheName {
+    height: 1.5em;
+}
+
+.thePeople > img{
+    border-radius: 1em;
+    background-color: #553566;
+    height: 60vh;
+
+}
+
+.thePeople{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+}
+
+.Col-2{
+    padding:0px 40px;
+}
+
+.Col-1{
+    padding-right: 20px;
+}
+
+.formBasicName, .formBasicUsername, .formBasicPassword, .formBasicEmail{
+    margin-bottom: 10px;
+}
+
+.signupTitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

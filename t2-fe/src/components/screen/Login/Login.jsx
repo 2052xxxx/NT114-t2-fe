@@ -5,8 +5,7 @@ import theName from '../header/name.png';
 import { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
-import { Redirect } from "react-router-dom";
+
 
 
 export default function Login(){
@@ -71,8 +70,7 @@ export default function Login(){
     return(
         <div className="Login-Button">
             <div className="loginTitle">
-                <h1 className="CL">Welcome</h1> 
-                <img className="theName" src={theName} alt="theName" />
+                <h2 className="CL">Welcome <img className="theName" src={theName} alt="theName" /> </h2> 
             </div> 
             <form  onSubmit={handleLogin}>
                 <div className="emailType_in">
