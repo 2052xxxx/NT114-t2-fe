@@ -7,23 +7,27 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 export default function Signup(){
-    const [signUp, setSignUp] = useState(false);    
+    const [signUp, setSignUp] = useState(false);   
+    const [passwordCheck, setPasswordCheck] = useState(true);     
     const [username, setUsername] = useState('');
     const [realname, setRealname] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [cfpassword, setCfpassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [errorText, setErrorText] = useState('');
 
     const checkValidation = (e) =>
     {
-      // if (password !== cfpassword)
-      // {
-      //   window.confirm("Password and Confirm password are not the same. Please check again.");
-      // }
-      // else
-      // {
-      //   setPassword(e.target.value);
-      // }
+      const cf = e.target.value;
+      setConfirmPassword(cf);
+      if (password !== cf)
+      {
+        setErrorText("Password and Confirm password are not the same. Please check again.");
+        setPasswordCheck(false);
+      }else{
+        setErrorText("");
+        setPasswordCheck(true);
+      }
     }
     
     const handleSignUp = async (e) => {
@@ -35,7 +39,7 @@ export default function Signup(){
         "username" : username,
         "realname" : realname,
         "email" : email,
-        "password" : password,
+        "password" : confirmPassword,
       };
       // try {
         // Gửi yêu cầu đăng nhập đến API
@@ -127,13 +131,19 @@ export default function Signup(){
                                   onChange={(e) => setPassword(e.target.value)}
                                   required/>
                             </Form.Group>
-                            <Form.Group className="formBasicCfPassword">
+                            <Form.Group className="formBasicConfirmPassword">
                                 <Form.Label className="">Confirm password</Form.Label>
                                 <Form.Control type="password" placeholder="Confirm password" 
+                                  value={confirmPassword}
+                                  onChange={(e) => checkValidation(e)}
+                                  required
                                   />
+                                <Form.Text className="text-warning">
+                                    {errorText}
+                                </Form.Text>
                             </Form.Group>
                             <div className="btnContinue">
-                                <button className="SW" type="submit">
+                                <button className="SW" type="submit" disabled={!passwordCheck}>
                                     Continue
                                 </button>
                             </div>
