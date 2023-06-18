@@ -12,7 +12,19 @@ export default function Signup(){
     const [realname, setRealname] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    
+    const [cfpassword, setCfpassword] = useState('');
+
+    const checkValidation = (e) =>
+    {
+      // if (password !== cfpassword)
+      // {
+      //   window.confirm("Password and Confirm password are not the same. Please check again.");
+      // }
+      // else
+      // {
+      //   setPassword(e.target.value);
+      // }
+    }
     
     const handleSignUp = async (e) => {
       e.preventDefault();
@@ -40,7 +52,7 @@ export default function Signup(){
           }
         })
         .catch((error) => {
-          if (window.confirm("Bật api chưa?, bật rồi thì lỗi cái vừa nãy rồi nha.")===true)
+          if (window.confirm("Bật api chưa? bật rồi thì lỗi cái vừa nãy rồi nha.")===true)
            //form.reset();
             window.location.assign("/")
            ;
@@ -78,7 +90,7 @@ export default function Signup(){
                         
                     </Col>
                     <Col className="Col-2">
-                    <div className="signupTitle">
+                      <div className="signupTitle">
                             <h1 className="CL">Join <img className="TheName" src={TheName} alt="TheName" /></h1>
                         </div>
                         <Form className="signUp-from" onSubmit={handleSignUp}>
@@ -96,7 +108,7 @@ export default function Signup(){
                                     onChange={(e) => setUsername(e.target.value)}
                                     required/>
                                 <Form.Text className="text-muted">
-                                    Your username won't include special characters.
+                                    Your username cannot contain the following special characters: !, @, #, $, %. ^, &, *, ( , ),., =, +, ]
                                 </Form.Text>
                             </Form.Group>
                             <Form.Group className="formBasicEmail">
@@ -111,13 +123,14 @@ export default function Signup(){
                             <Form.Group className="formBasicPassword">
                                 <Form.Label className="">Your password</Form.Label>
                                 <Form.Control type="password" placeholder="Password" 
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    required/>
+                                  value={password}
+                                  onChange={(e) => setPassword(e.target.value)}
+                                  required/>
                             </Form.Group>
                             <Form.Group className="formBasicCfPassword">
                                 <Form.Label className="">Confirm password</Form.Label>
-                                <Form.Control type="password" placeholder="Confirm password" />
+                                <Form.Control type="password" placeholder="Confirm password" 
+                                  />
                             </Form.Group>
                             <div className="btnContinue">
                                 <button className="SW" type="submit">
