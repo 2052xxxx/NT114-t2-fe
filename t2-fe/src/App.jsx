@@ -18,6 +18,35 @@ import Tags from './components/admin/tags/tags';
 import UserProfile from './components/screen/UserProfile/UserProfile';
 
 function App() {
+  // send token from local storage to api("https://localhost:7015/api/User/verify"")
+  // const token = localStorage.getItem('token');
+  // const data = {
+  //   "token" : token,
+  // };
+  // fetch("https://localhost:7015/api/User/verify", {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify(data),
+  // })
+  // .then((response) => {
+  //   console.log(response);
+  //   if (response.status === 200) {
+  //     // Đăng nhập thành công, lưu thông tin user và access token vào localStorage
+  //     localStorage.setItem('token', 'bearer '+ response.data);
+  //   }
+  //   else if (response.status === 401) {
+  //     window.confirm("Login failed. Please check your login information.");
+  //   }
+  // })
+  // .catch((error) => {
+  //   if (window.confirm("Bật api chưa?, bật rồi thì lỗi cái vừa nãy rồi nha.")===true)
+  //     //form.reset();
+  //     window.location.assign("/")
+  //   ;
+  // });
+
   return (
     <div className="App">
       

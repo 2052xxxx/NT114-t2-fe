@@ -32,7 +32,7 @@ export default function Login(){
           console.log(response);
           if (response.status === 200) {
             // Đăng nhập thành công, lưu thông tin user và access token vào localStorage 
-            localStorage.setItem('token', response.data);
+            localStorage.setItem('token', 'bearer '+ response.data);
             setLoggedIn(true);
           }
           else if (response.status === 401) {
