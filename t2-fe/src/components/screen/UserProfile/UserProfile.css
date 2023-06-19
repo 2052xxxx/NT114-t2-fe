@@ -1,0 +1,29 @@
+/* 
+  .containUP {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  .rowFollow, .rowInfo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  } */
+
+/* .profile-avatar{
+  height: 200px;
+} */
+
+.paperwall-background{
+  background-color: #ca5a5a;
+}
+body{
+  margin: 0;
+  padding: 0;
+}

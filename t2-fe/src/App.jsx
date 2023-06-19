@@ -15,6 +15,7 @@ import Admin from './components/admin/_screen/adminScreen';
 import CManagement from './components/admin/contentManagement/cManagement';
 import Articles from './components/admin/articles/articles';
 import Tags from './components/admin/tags/tags';
+import UserProfile from './components/screen/UserProfile/UserProfile';
 
 function App() {
   return (
@@ -28,9 +29,10 @@ function App() {
           <Route path="/signup" element={<Signup/>}/>
           <Route path="/cManagement" exact element={<CManagement/>}/>
           <Route path="/headerPage" element={<AdHeader/>}/>
-          <Route path="/cBlog" element={<CBlog/>}/>
+          {/* <Route path="/cBlog" element={<CBlog/>}/>
           <Route path="/CBlogNext" element={<CBlogNext/>}/>
-          <Route path="/pagez" element={<Pagez/>}/>
+          <Route path="/pagez" element={<Pagez/>}/> */}
+          <Route path="/UserProfile" element={<div> <UserProfile/></div>}/>
           <Route path="/writing" element={<Writing/>}/>
           <Route path="/adHeader" element={<div> <AdHeader/></div>}/> 
           <Route path="/adSidebar" element={<div> <AdSidebar/></div>}/>          
