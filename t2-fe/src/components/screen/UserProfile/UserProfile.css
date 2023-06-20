@@ -1,11 +1,13 @@
 /* UserProfile.css */
 
 .user-profile {
-  position: relative;
-  top: 98px;
+  position: flex;
+  margin-top: auto;
   /* text-align: center; */
 }
-
+.UP_Profile{
+  padding-top: 14vh;
+}
 .paperwall-background {
   position: absolute;
   top: 0;

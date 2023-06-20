@@ -1,13 +1,11 @@
 import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import './UserProfile.css'; // Import CSS file here
-import AdHeader from '../../admin/ad-header/adHeader';
 import theUser from './theUser.png';
 
 const UserProfile = () => {
   return (
     <div>
-      <AdHeader />
       <Container fluid className="user-profile">
         <div className="paperwall-background"></div>
         <Row className="follow-row">

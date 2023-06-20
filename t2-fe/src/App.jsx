@@ -16,16 +16,15 @@ import Admin from './components/admin/_screen/adminScreen';
 import CManagement from './components/admin/contentManagement/cManagement';
 import Articles from './components/admin/articles/articles';
 import Tags from './components/admin/tags/tags';
-import UserProfile from './components/screen/UserProfile/UserProfile';
-import Header from './components/screen/header/header';
-import SubContent from './components/screen/subContent/subContent';
+import UserProfile from './components/screen/UserProfile/UserProfile_screen';
+import Initial from './components/screen/subContent/Initial';
 
 function App() {
   return (
     <div className="App">      
     <BrowserRouter>
         <Routes>
-          <Route path="" element={<div> <Header/> <SubContent/></div>}/>
+          <Route path="" element={<Initial/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/signup" element={<Signup/>}/>
           <Route path="/cManagement" exact element={<CManagement/>}/>
