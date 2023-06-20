@@ -24,6 +24,8 @@ header {
 
 .lists >li{
     padding: 1em;
+    color: #553566;
+    text-decoration: underline;
 }
 
 .signIn{

@@ -20,7 +20,6 @@ export default function Header(){
             </div>
             <ul className="lists">
                 <li>Home</li>
-                <li>About</li>
             </ul>
             <button className="signIn " variant="primary" onClick={handleShowSignIn}>
                 Sign In

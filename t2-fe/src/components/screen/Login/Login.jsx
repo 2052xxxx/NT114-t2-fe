@@ -32,18 +32,17 @@ export default function Login(){
           console.log(response);
           if (response.status === 200) {
             // Đăng nhập thành công, lưu thông tin user và access token vào localStorage 
-            localStorage.setItem('token', 'bearer '+ response.data);
+            localStorage.setItem('token', response.data);
             setLoggedIn(true);
           }
-          else if (response.status === 401) {
-            window.confirm("Login failed. Please check your login information.");
+          else if (response.status === 400) {
+            window.confirm(response.data);
           }
         })
         .catch((error) => {
           if (window.confirm("Bật api chưa?, bật rồi thì lỗi cái vừa nãy rồi nha.")===true)
            //form.reset();
-            window.location.assign("/")
-           ;
+            window.location.assign("/");
         });
         
         
@@ -65,7 +64,7 @@ export default function Login(){
   
     // Nếu đã đăng nhập, chuyển hướng đến "/HeaderPage"
     if (loggedIn) {
-      return window.location.assign("/HeaderPage");
+      return window.location.assign("/UserProfile");
     }
     return(
         <div className="Login-Button">

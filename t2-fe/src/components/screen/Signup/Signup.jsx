@@ -5,6 +5,9 @@ import thePeople from './thePeople.png';
 import { Form, Container, Row, Col } from 'react-bootstrap';
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
 
 export default function Signup(){
     const [signUp, setSignUp] = useState(false);   
@@ -48,19 +51,21 @@ export default function Signup(){
           console.log(response);
           if (response.status === 200) {
             // Đăng nhập thành công, lưu thông tin user và access token vào localStorage 
-            localStorage.setItem('token', 'bearer '+ response.data);
+            localStorage.setItem('token', response.data);
             setSignUp(true);
           }
-          else if (response.status === 400) {
-            window.confirm("Sign up failed. Please check your sign up information.");
+          else if (response.status === 401) {
+            setErrorText("Failed to sign up. Please check again if username or email already exists.");
           }
+          
         })
         .catch((error) => {
-          if (window.confirm("Bật api chưa? bật rồi thì lỗi cái vừa nãy rồi nha.")===true)
+          if (window.confirm("Failed to sign up. Please check again if username or email already exists.")===true)
            //form.reset();
-            window.location.assign("/")
+            window.location.assign("/Signup")
            ;
-        });
+        })
+        ;
         
         
         // Đăng nhập thành công
@@ -81,18 +86,22 @@ export default function Signup(){
   
     // Nếu đã đăng nhập, chuyển hướng đến "/HeaderPage"
     if (signUp) {
-      return window.location.assign("/HeaderPage");
+      return window.location.assign("/UserProfile");
     }
     return(
         <div className = "SignUp-Button">
-            
             <Container>
-                    <Col className="Col-1 d-flex align-items-center justify-content-center">
-                        <div className="thePeople">
-                            <img src={thePeople} alt="thePeople" />
-                        </div>
+                    <Col className="Col-1">
+                      <div className="home">
+                      
+                      <a href="/"  role="button" aria-pressed="true"><FontAwesomeIcon icon={faArrowLeft} style={{color: "#553566",}} /> Home</a>
+                      </div>
+                      <div className="thePeople">
+                          <img src={thePeople} alt="thePeople" />
+                      </div>
                         
                     </Col>
+
                     <Col className="Col-2">
                       <div className="signupTitle">
                             <h1 className="CL">Join <img className="TheName" src={TheName} alt="TheName" /></h1>
