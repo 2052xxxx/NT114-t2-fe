@@ -12,9 +12,9 @@ export const getTokenInfo = async (token) => {
         },
       }
     );
-    return loginSuccess(response.data);
+    return response.data;
   } catch (error) {
-    console.error(error);
-    return loginFailure(error);
+    
+    return console.error(error);
   }
 };
