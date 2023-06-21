@@ -5,13 +5,13 @@ import theUser from './theUser.png';
 import { useSelector } from 'react-redux';
 
 const UserProfile = () => {
-  const { userInfo } = useSelector(state => state.auth);
+  // const { userInfo } = useSelector(state => state.auth);
 
-  if (!userInfo) {
-    return <div>Loading...</div>;
-  }
+  // if (!userInfo) {
+  //   return <div>Loading...</div>;
+  // }
 
-  const { username, realname, email, bio} = userInfo;
+  // const { username, realname, email, bio} = userInfo;
   
   return (
     <div>
@@ -20,7 +20,7 @@ const UserProfile = () => {
         <Row className="follow-row">
           <Col md={12} className="text-center">
             <Image src={theUser} roundedCircle className="profile-avatar" />
-            <div className="profile-name"> <h2>{username}</h2></div>
+            <div className="profile-name"> <h2>John Doe</h2></div>
             <div className="profile-info">
               <div>Followers: 100</div>
               <div className='profile-button'>
@@ -39,13 +39,13 @@ const UserProfile = () => {
           </Col>
           <Col md={4} className='info-column'>
             <div className="">
-              <strong>Username:</strong> {username}
+              <strong>Username:</strong> johndoe
             </div>
             <div className="">
-              <strong>Email:</strong> {email}
+              <strong>Email:</strong> johndoe
             </div>
             <div className="profile-bio">
-              <strong>Bio:</strong> {bio}
+              <strong>Bio:</strong> johndoe
             </div>
           </Col>
         </Row>

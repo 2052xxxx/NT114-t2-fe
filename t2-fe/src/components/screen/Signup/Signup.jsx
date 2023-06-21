@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from 'react-redux';
-import { setUserInfo } from '../../../redux/authActions';
+import { loginSuccess } from '../../../redux/authActions';
 import { getTokenInfo } from '../../../redux/tokenUtils';
 
 export default function Signup(){
@@ -79,7 +79,7 @@ export default function Signup(){
         const fetchData = async () => {
           const response = await getTokenInfo(token);
           if (response) {
-            dispatch(setUserInfo(response));
+            dispatch(loginSuccess(response));
           }
         }
         fetchData();

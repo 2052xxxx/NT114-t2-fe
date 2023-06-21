@@ -1,6 +1,6 @@
 // tokenUtils.js
 import axios from "axios";
-
+import { loginSuccess, loginFailure } from "./authActions";
 export const getTokenInfo = async (token) => {
   try {
     const response = await axios.get(
@@ -12,9 +12,9 @@ export const getTokenInfo = async (token) => {
         },
       }
     );
-    return response.data;
+    return loginSuccess(response.data);
   } catch (error) {
     console.error(error);
-    return null;
+    return loginFailure(error);
   }
 };

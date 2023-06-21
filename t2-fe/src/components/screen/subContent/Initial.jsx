@@ -3,7 +3,7 @@ import Header from "../header/header";
 import SubContent from "../subContent/subContent";
 import { useDispatch } from 'react-redux';
 import { useState, useEffect } from "react";
-import { setUserInfo } from '../../../redux/authActions';
+import { loginSuccess, } from '../../../redux/authActions';
 import { getTokenInfo } from '../../../redux/tokenUtils';
 
 export default function Initial(){
@@ -20,7 +20,7 @@ export default function Initial(){
             const fetchData = async () => {
                 const response = await getTokenInfo(token);
                 if (response) {
-                  dispatch(setUserInfo(response));
+                  dispatch(loginSuccess(response));
                 }
             };
         
