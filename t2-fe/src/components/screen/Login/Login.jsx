@@ -35,8 +35,9 @@ export default function Login(){
             localStorage.setItem('token', response.data);
             setLoggedIn(true);
           }
-          else if (response.status === 400) {
+          else{
             window.confirm(response.data);
+            setLoggedIn(false);
           }
         })
         .catch((error) => {

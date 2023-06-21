@@ -7,7 +7,9 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-
+import { useDispatch } from 'react-redux';
+import { setUserInfo } from '../../../redux/authActions';
+import { getTokenInfo } from '../../../redux/tokenUtils';
 
 export default function Signup(){
     const [signUp, setSignUp] = useState(false);   
@@ -18,6 +20,9 @@ export default function Signup(){
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errorText, setErrorText] = useState('');
+    const [token, setToken] = useState('');
+
+    const dispatch = useDispatch();
 
     const checkValidation = (e) =>
     {
@@ -50,14 +55,15 @@ export default function Signup(){
         .then((response) => {
           console.log(response);
           if (response.status === 200) {
+            
             // Đăng nhập thành công, lưu thông tin user và access token vào localStorage 
+            setToken(response.data);
             localStorage.setItem('token', response.data);
             setSignUp(true);
           }
           else if (response.status === 401) {
             setErrorText("Failed to sign up. Please check again if username or email already exists.");
           }
-          
         })
         .catch((error) => {
           if (window.confirm("Failed to sign up. Please check again if username or email already exists.")===true)
@@ -66,23 +72,19 @@ export default function Signup(){
            ;
         })
         ;
-        
-        
-        // Đăng nhập thành công
-        // Chuyển hướng đến trang mới
-        
-      //window.location.href= "/HeaderPage"; // Thay thế bằng URL của trang bạn muốn chuyển hướng
-      // } catch (error) {
-      //   // Đăng nhập không thành công
-      //   toast.error("Đăng nhập không thành công. Vui lòng kiểm tra lại thông tin đăng nhập.");
-      // }
     };
     useEffect(() => {
       if (signUp) {
         // Chuyển hướng sau khi xử lý thành công
-        console.log("Redirecting...");
+        const fetchData = async () => {
+          const response = await getTokenInfo(token);
+          if (response) {
+            dispatch(setUserInfo(response));
+          }
+        }
+        fetchData();
       }
-    }, [signUp]);
+    }, [dispatch, token, signUp]);
   
     // Nếu đã đăng nhập, chuyển hướng đến "/HeaderPage"
     if (signUp) {

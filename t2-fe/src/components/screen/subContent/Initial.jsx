@@ -1,41 +1,33 @@
 import React from "react";
 import Header from "../header/header";
 import SubContent from "../subContent/subContent";
+import { useDispatch } from 'react-redux';
 import { useState, useEffect } from "react";
-import axios from "axios";
+import { setUserInfo } from '../../../redux/authActions';
+import { getTokenInfo } from '../../../redux/tokenUtils';
 
 export default function Initial(){
     const [tokenCheck, setTokenCheck] = useState(false);
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
+    // const [username, setUsername] = useState('');
+    // const [email, setEmail] = useState('');
+    const dispatch = useDispatch();
     const token = localStorage.getItem('token');
-    const responseData = {
-        "username" : username,
-        "email" : email
-    }
     useEffect(() => {
         if (token === null) {
             setTokenCheck(false);
         }
         else {
-            const url = 'https://localhost:7015/api/User';
-            axios.get(url, {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `bearer ${token}`,
-                },
-            }).then((response) => {
-                if (response.status === 200) {
-                    setTokenCheck(true);
-                    setUsername(response.data.username);
-                    setEmail(response.data.email);
+            const fetchData = async () => {
+                const response = await getTokenInfo(token);
+                if (response) {
+                  dispatch(setUserInfo(response));
                 }
-                else if (response.status === 401) {
-                    setTokenCheck(false);
-                }
-            });
+            };
+        
+            fetchData();        
+            setTokenCheck(true);
         }        
-    }, [token]);
+    }, [dispatch, token]);
 
     if (tokenCheck === false) {
         return(
