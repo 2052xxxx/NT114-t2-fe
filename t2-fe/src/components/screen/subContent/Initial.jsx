@@ -3,8 +3,7 @@ import Header from "../header/header";
 import SubContent from "../subContent/subContent";
 import { useDispatch } from 'react-redux';
 import { useState, useEffect } from "react";
-import { loginSuccess, } from '../../../redux/authActions';
-import { getTokenInfo } from '../../../redux/tokenUtils';
+import { getTokenInfo } from '../../../redux/authActions';
 
 export default function Initial(){
     const [tokenCheck, setTokenCheck] = useState(false);
@@ -12,23 +11,37 @@ export default function Initial(){
     // const [email, setEmail] = useState('');
     const dispatch = useDispatch();
     const token = localStorage.getItem('token');
+    
     useEffect(() => {
-        if (token === null) {
-            setTokenCheck(false);
-        }
-        else {
-            const fetchData = async () => {
-                const response = await getTokenInfo(token);
-                if (response) {
-                  dispatch(loginSuccess(response));
-                }
-            };
-        
-            fetchData();        
-            setTokenCheck(true);
-        }        
-    }, [dispatch, token]);
 
+        if(!token){
+            setTokenCheck(false);
+        }else{
+            setTokenCheck(true);
+            dispatch(getTokenInfo(token));
+        }
+    }, [dispatch, token]);
+    
+    // useEffect(() => {
+        
+    //     // const response = getTokenInfo(token);
+    //     //         if (response) {
+    //     //           dispatch(loginSuccess(response));
+    //     //         }
+    //     // if (token === null) {
+    //     //     setTokenCheck(false);
+    //     // }
+    //     // else {
+    //     //     const fetchData = async () => {
+                
+    //     //     };
+        
+    //     //     fetchData();        
+    //     //     setTokenCheck(true);
+    //     // }        
+    // }, [dispatch, token]);
+    //<a href="/UserProfile" onClick={handleLogin}>dfsdf</a>
+    //window.location.href = "/UserProfile";
     if (tokenCheck === false) {
         return(
             <div>
@@ -37,6 +50,6 @@ export default function Initial(){
             </div>
         )
     }else{
-        return window.location.href = "/UserProfile";
+        window.location.href = "/UserProfile";
     }
 }

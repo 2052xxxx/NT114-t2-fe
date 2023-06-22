@@ -5,12 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
-import store from './redux/store';
+import { createStore, applyMiddleware } from 'redux';
+import rstore from './redux/store';
+import thunk from 'redux-thunk'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const store= createStore(rstore,applyMiddleware(thunk))
 root.render(
   <React.StrictMode>
-     <Provider store={store()}>
+     <Provider store={store}>
     <App />
     </Provider>
   </React.StrictMode>

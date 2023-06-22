@@ -8,8 +8,7 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from 'react-redux';
-import { loginSuccess } from '../../../redux/authActions';
-import { getTokenInfo } from '../../../redux/tokenUtils';
+import { loginSuccess, getTokenInfo } from '../../../redux/authActions';
 
 export default function Signup(){
     const [signUp, setSignUp] = useState(false);   
@@ -59,6 +58,7 @@ export default function Signup(){
             // Đăng nhập thành công, lưu thông tin user và access token vào localStorage 
             setToken(response.data);
             localStorage.setItem('token', response.data);
+            
             setSignUp(true);
           }
           else if (response.status === 401) {
@@ -75,14 +75,8 @@ export default function Signup(){
     };
     useEffect(() => {
       if (signUp) {
-        // Chuyển hướng sau khi xử lý thành công
-        const fetchData = async () => {
-          const response = await getTokenInfo(token);
-          if (response) {
-            dispatch(loginSuccess(response));
-          }
-        }
-        fetchData();
+        
+        dispatch(getTokenInfo(token));
       }
     }, [dispatch, token, signUp]);
   

@@ -24,9 +24,9 @@ function App() {
     <div className="App">      
     <BrowserRouter>
         <Routes>
-          <Route path="" element={<Initial/>}/>
+          <Route path="/" element={<Initial/>}/>
           <Route path="/login" element={<Login/>}/>
-          <Route path="/signup" element={<Signup/>}/>
+          <Route path="/Signup" element={<Signup/>}/>
           <Route path="/cManagement" exact element={<CManagement/>}/>
           <Route path="/headerPage" element={<AdHeader/>}/>
           {/* <Route path="/cBlog" element={<CBlog/>}/>

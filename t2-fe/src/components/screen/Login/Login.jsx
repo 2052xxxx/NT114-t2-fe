@@ -5,15 +5,16 @@ import theName from '../header/name.png';
 import { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
-
-
+import { getTokenInfo } from "../../../redux/authActions";
+import { useDispatch } from "react-redux";
 
 export default function Login(){
   
   const [loggedIn, setLoggedIn] = useState(false);    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    
+    const dispatch = useDispatch();
+
     
     const handleLogin = async (e) => {
       e.preventDefault();
@@ -33,6 +34,7 @@ export default function Login(){
           if (response.status === 200) {
             // Đăng nhập thành công, lưu thông tin user và access token vào localStorage 
             localStorage.setItem('token', response.data);
+            dispatch(getTokenInfo(response.data));
             setLoggedIn(true);
           }
           else{
