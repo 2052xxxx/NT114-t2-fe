@@ -1,12 +1,9 @@
 import React, {useState} from "react";
 import theLogo from '../../screen/header/theLogo.png'
-//import Login from "../../screen/Login/Login";
-// import Modal from 'react-bootstrap/Modal';
-//import font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faPenNib, faBell, faGear } from '@fortawesome/free-solid-svg-icons';
 import { faUser} from '@fortawesome/free-regular-svg-icons';
-import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faRightFromBracket, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Button from 'react-bootstrap/esm/Button';
 import Image from 'react-bootstrap/Image';
@@ -69,6 +66,10 @@ export default function Header(){
                                 <span> Settings </span>
                             </Dropdown.Item>
                             <Dropdown.Item href="#/action-3">
+                                <FontAwesomeIcon icon={faEnvelope} style={{color: "#d46bca",}}/>
+                                <span> Help </span>
+                            </Dropdown.Item>
+                            <Dropdown.Item href="#/action-4">
                                 <FontAwesomeIcon icon={faRightFromBracket} style={{color: "#d46bca",}}/>
                                 <span> Logout </span>
                             </Dropdown.Item>
