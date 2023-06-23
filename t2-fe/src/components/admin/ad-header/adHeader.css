@@ -15,6 +15,10 @@
     margin-right: 1em;
 }
 
+.logo:hover {
+    cursor: pointer;
+  }
+
 .header-components {
     display: flex;
     align-content: center;

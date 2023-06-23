@@ -66,7 +66,7 @@ export default function Writing(){
         }, [posted]);
 
         if (posted) {
-            return window.location.assign("/HeaderPage");
+            return window.location.assign("/UserProfile");
           }
 
     return(
