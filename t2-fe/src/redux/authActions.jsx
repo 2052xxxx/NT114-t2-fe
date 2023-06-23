@@ -30,13 +30,13 @@ export const getTokenInfo =  (token) => {
           
       },
     }).then((response) => {
-      console.log(response);
       if (response.status === 200) {
         
         // Đăng nhập thành công, lưu thông tin user và access token vào localStorage 
         const user =  response.data;
         localStorage.setItem('currentUser', JSON.stringify(user));
         dispatch(loginSuccess(user));
+        console.log(user);
       }
       else if (response.status === 401) {
         dispatch(loginFailure(response.data));
@@ -49,24 +49,24 @@ export const getTokenInfo =  (token) => {
     //   //console.log("abc");
   //   dispatch(loginRequest());
   //   try {
-  //   // const response = axios.get(
-  //   //   'https://localhost:7015/api/User',
-  //   //   {
-  //   //     headers: {
-  //   //         'Content-Type': 'application/json',
-  //   //         Authorization: `bearer ${token}`
+  //   const response = axios.get(
+  //     'https://localhost:7015/api/User',
+  //     {
+  //       headers: {
+  //           'Content-Type': 'application/json',
+  //           Authorization: `bearer ${token}`
             
-  //   //     },
-  //   //   }
-  //   // );
+  //       },
+  //     }
+  //   );
 
    
   //   // const user =  {
   //   //   username:"trang"
   //   // };
    
-  //   localStorage.setItem('currentUser', JSON.stringify(user));
-  //   dispatch(loginSuccess(user));
+  //   localStorage.setItem('currentUser', JSON.stringify(response));
+  //   dispatch(loginSuccess(response));
   // } catch (error) {
     
   //   dispatch(loginFailure(error.message));
