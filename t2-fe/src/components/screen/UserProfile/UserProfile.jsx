@@ -3,10 +3,21 @@ import { Container, Row, Col, Image } from 'react-bootstrap';
 import './UserProfile.css'; // Import CSS file here
 import theUser from './theUser.png';
 import { useSelector } from 'react-redux';
+import CBlog from '../CBlog/CBlog';
+import { useState, useEffect } from "react";
 
 const UserProfile = () => {
-  const user= useSelector((state)=> state.login?.currentUser)
-  // const { userInfo } = useSelector(state => state.auth);
+  
+  const user = useSelector((state) => state.login?.currentUser);
+  const [articles, setArticles] = useState([]);
+  
+  useEffect(() => {
+    // Fetch articles from the API
+    fetch(`https://localhost:7015/api/Article/showUserArticle?userId=${user[0]?.userid}`)
+      .then(response => response.json())
+      .then(data => setArticles(data))
+      .catch(error => console.log(error));
+  }, [user]);
 
   if (!user) {
     return <div>Loading...</div>;
@@ -39,7 +50,9 @@ const UserProfile = () => {
           </Row>
           <Row className="info-row">
             <Col md={8}>
-              HEHE
+              {articles.map(article => (
+                  <CBlog key={article.id} article={article} />
+                ))}
             </Col>
             <Col md={4} className='info-column'>
               <div className="">

@@ -75,7 +75,6 @@ export default function Signup(){
     };
     useEffect(() => {
       if (signUp) {
-        
         dispatch(getTokenInfo(token));
       }
     }, [dispatch, token, signUp]);

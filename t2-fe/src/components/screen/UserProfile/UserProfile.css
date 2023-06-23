@@ -49,3 +49,8 @@
 .info-row{
   margin-top: 20px;
 }
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}

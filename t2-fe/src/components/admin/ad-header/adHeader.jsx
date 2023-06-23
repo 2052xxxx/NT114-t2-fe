@@ -5,7 +5,8 @@ import theLogo from '../../screen/header/theLogo.png'
 //import font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faPenNib, faBell, faGear } from '@fortawesome/free-solid-svg-icons';
-import { faUser, faNewspaper} from '@fortawesome/free-regular-svg-icons';
+import { faUser} from '@fortawesome/free-regular-svg-icons';
+import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Button from 'react-bootstrap/esm/Button';
 import Image from 'react-bootstrap/Image';
@@ -17,10 +18,13 @@ export default function Header(){
     // const handleClose = () => setShow(false);
     // const handleShow = () => setShow(true);
     // logout = () => {
+    const handleNavHome = () => {
+        window.location.href = "/HeaderPage";
+    }
     return(
         <header className='ad-Header'>
             <div className="logo">
-                <img className="theLogo" src={theLogo} alt="theLogo" />                
+                <img className="theLogo" src={theLogo} alt="theLogo" onClick={handleNavHome}/>                
             </div>
             <form action="" className="search-box">
                 <input type="text" className="search-text" placeholder="Search" required/>
@@ -45,7 +49,7 @@ export default function Header(){
                             <Dropdown.Menu>
                                 <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
                                 <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">Logout</Dropdown.Item>
+                                <Dropdown.Item href="#/action-3">Another action</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
 
@@ -56,17 +60,17 @@ export default function Header(){
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1">
+                            <Dropdown.Item href="/UserProfile">
                                 <FontAwesomeIcon icon={faUser} style={{color: "#d46bca",}} />
                                 <span> Profile </span>
                             </Dropdown.Item>
                             <Dropdown.Item href="#/action-2">
-                                <FontAwesomeIcon icon={faNewspaper} style={{color: "#d46bca",}}/>
-                                <span> Articles </span>
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">
                                 <FontAwesomeIcon icon={faGear} style={{color: "#d46bca",}}/>
                                 <span> Settings </span>
+                            </Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">
+                                <FontAwesomeIcon icon={faRightFromBracket} style={{color: "#d46bca",}}/>
+                                <span> Logout </span>
                             </Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
