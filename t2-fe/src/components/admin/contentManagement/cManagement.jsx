@@ -52,15 +52,17 @@ export default function CManagement() {
     <Container fluid>
       <Col>
         <Row sm={1}>
-          {isHeaderVisible && <Navbar bg="dark" variant="dark" className="navBar">
-            <Container>
-              <Navbar.Brand href="#home">Content Management</Navbar.Brand>
-              <Nav className="me-auto">
-                <Nav.Link href="#Articles" onClick={() => handleBarClick('articles')}>Articles</Nav.Link>
-                <Nav.Link href="#Tags" onClick={() => handleBarClick('tags')}>Tags</Nav.Link>
-              </Nav>
-            </Container>
-          </Navbar>}    
+          {
+            isHeaderVisible && <Navbar bg="dark" variant="dark" className="navBar">
+              <Container>
+                <Navbar.Brand href="#home">Content Management</Navbar.Brand>
+                <Nav className="me-auto">
+                  <Nav.Link href="#Articles" onClick={() => handleBarClick('articles')}>Articles</Nav.Link>
+                  <Nav.Link href="#Tags" onClick={() => handleBarClick('tags')}>Tags</Nav.Link>
+                </Nav>
+              </Container>
+            </Navbar>
+          }    
         </Row>
         <Row sm={10}>
           {selectedTag}

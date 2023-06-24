@@ -5,12 +5,15 @@ import theUser from './theUser.png';
 import { useSelector } from 'react-redux';
 import CBlog from '../CBlog/CBlog';
 import { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const UserProfile = () => {
   
   const user = useSelector((state) => state.login?.currentUser);
   const [articles, setArticles] = useState([]);
-  
+  const navigate = useNavigate();
+
   useEffect(() => {
     // Fetch articles from the API
     fetch(`https://localhost:7015/api/Article/showUserArticle?userId=${user[0]?.userid}`)
@@ -18,13 +21,14 @@ const UserProfile = () => {
       .then(data => setArticles(data))
       .catch(error => console.log(error));
   }, [user]);
-
+  const handleArticleClick = (articleId) => {
+    navigate(`/Article/${articleId}`);
+  };
   if (!user) {
     return <div>Loading...</div>;
   }
-  else{
-  // const { username, realname, email, bio} = userInfo;
-  
+  else{  
+    
     return (
       <div>
         <Container fluid className="user-profile">
@@ -49,10 +53,12 @@ const UserProfile = () => {
             </Col>
           </Row>
           <Row className="info-row">
-            <Col md={8}>
+          <Col md={8}>
               {articles.map(article => (
-                  <CBlog key={article.id} article={article} />
-                ))}
+                <div key={article.articleId} onClick={() => handleArticleClick(article.articleId)}>
+                  <CBlog article={article} />
+                </div>
+              ))}
             </Col>
             <Col md={4} className='info-column'>
               <div className="">

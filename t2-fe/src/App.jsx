@@ -6,7 +6,7 @@ import axios from 'axios';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './components/screen/Login/Login';
 import Signup from './components/screen/Signup/Signup';
-import CBlog from './components/screen/CBlog/CBlog';
+import Blog from './components/screen/CBlog/Blog';
 import CBlogNext from './components/screen/CBlogNext/CBlogNext';
 import Writing from './components/screen/Writing/Writing';
 import Pagez from './components/screen/MainAfterSignin/Pagez/Pagez';
@@ -28,7 +28,9 @@ function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/Signup" element={<Signup/>}/>
           <Route path="/cManagement" exact element={<CManagement/>}/>
-          <Route path="/headerPage" element={<AdHeader/>}/>
+          <Route path="/headerPage" element={<AdHeader/>}/>          
+          <Route path="/Article" element={<Blog/>}/>
+          <Route path="/Article/:articleID" element={<Blog/>}/>
           {/* <Route path="/cBlog" element={<CBlog/>}/>
           <Route path="/CBlogNext" element={<CBlogNext/>}/>
           <Route path="/pagez" element={<Pagez/>}/> */}

@@ -1,21 +1,27 @@
 .cblog {
-    background-color: #f7f7f7;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
+  background-color: #f7f7f7;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.cblog-header {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.cblog-header h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.cblog-header p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 5px;
   
-  .cblog-header {
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 10px;
-  }
-  
-  .cblog-title {
-    font-size: 24px;
-    color: #333;
-  }
-  
-  .cblog-body {
-    color: #666;
-    line-height: 1.5;
-  }
-  
+}
+
+.cblog-body {
+  color: #666;
+  line-height: 1.5;
+}
