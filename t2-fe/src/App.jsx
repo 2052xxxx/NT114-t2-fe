@@ -18,6 +18,7 @@ import Articles from './components/admin/articles/articles';
 import Tags from './components/admin/tags/tags';
 import UserProfile from './components/screen/UserProfile/UserProfile_screen';
 import Initial from './components/screen/subContent/Initial';
+import Home from './components/screen/Home/Home';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
           <Route path="/Signup" element={<Signup/>}/>
           <Route path="/cManagement" exact element={<CManagement/>}/>
           <Route path="/headerPage" element={<AdHeader/>}/>          
-          <Route path="/Article" element={<Blog/>}/>
+          <Route path="/home" element={<Home/>}/>
           <Route path="/Article/:articleID" element={<Blog/>}/>
           {/* <Route path="/cBlog" element={<CBlog/>}/>
           <Route path="/CBlogNext" element={<CBlogNext/>}/>

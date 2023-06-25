@@ -50,10 +50,6 @@ export default function Writing(){
 
       useEffect(() => {
         if (posted) {
-            // if (window.confirm("Posted successfully. Do you want to go to the homepage?")===true)
-            // {
-            //     window.location.assign("/HeaderPage");
-            // }
             console.log("Posted successfully");
 
         } else {

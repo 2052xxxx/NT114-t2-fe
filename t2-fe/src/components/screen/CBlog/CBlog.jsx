@@ -7,12 +7,12 @@ const CBlog = ({ article }) => {
   return (
     <div className="cblog">
       <div className="cblog-header">
-        <h2>{article.articleTitle}</h2>
+        <h2>{article.articleTitle || ""}</h2>
         {/* <p>By {article.Author} on {article.Date}</p> */}
-        <p>By {article.authorName} on {article.lastUpdated}</p>
+        <p>By {article.authorName || ""} on {article.lastUpdated || ""}</p>
       </div>
       <div className="cblog-body">
-        <p>{article.body}</p>
+        <p>{article.body || ""}</p>
       </div>
     </div>
   );

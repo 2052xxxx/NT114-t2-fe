@@ -77,7 +77,7 @@ export default function Login(){
             <form  onSubmit={handleLogin}>
                 <div className="emailType_in">
                     <h5>Your email</h5>
-                    <input  type="email"
+                    <input  type="text"
                             placeholder="Email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}

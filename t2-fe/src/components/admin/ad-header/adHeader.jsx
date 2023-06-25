@@ -8,6 +8,10 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import Button from 'react-bootstrap/esm/Button';
 import Image from 'react-bootstrap/Image';
 import './adHeader.css';
+import { useSelector } from "react-redux";
+import axios from "axios";
+import { logout } from "../../../redux/authActions";
+import { useDispatch } from "react-redux";
 
 export default function Header(){
     // const [show, setShow] = useState(false);
@@ -16,7 +20,29 @@ export default function Header(){
     // const handleShow = () => setShow(true);
     // logout = () => {
     const handleNavHome = () => {
-        window.location.href = "/HeaderPage";
+        window.location.href = "/Home";
+    }
+
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        const data = {
+            username: currentUser[0].username,
+          email: currentUser[0].email,
+        };
+   
+    const handleLogout = () => {
+        axios.post('https://localhost:7015/api/User/logout', data)
+        .then((response) => {
+            if (response.status === 200) {
+                // Xóa user và access token khỏi localStorage
+                localStorage.clear();
+                window.location.assign("/");
+                console.log("Logged out successfully");
+            }
+            else if (response.status === 401) {
+                console.log("Failed to logout. Please check again.");
+            }
+        })
+        
     }
     return(
         <header className='ad-Header'>
@@ -69,7 +95,7 @@ export default function Header(){
                                 <FontAwesomeIcon icon={faEnvelope} style={{color: "#d46bca",}}/>
                                 <span> Help </span>
                             </Dropdown.Item>
-                            <Dropdown.Item href="#/action-4">
+                            <Dropdown.Item href="#/action-4" onClick={handleLogout}>
                                 <FontAwesomeIcon icon={faRightFromBracket} style={{color: "#d46bca",}}/>
                                 <span> Logout </span>
                             </Dropdown.Item>

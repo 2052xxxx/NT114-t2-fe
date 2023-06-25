@@ -25,3 +25,39 @@
   color: #666;
   line-height: 1.5;
 }
+
+.cblog-next, .author-info{
+  padding-top: 20vh;
+}
+
+.cblog-next{
+  padding-left: 2vw;
+
+}
+.author-info{
+  padding-right: 2vw;
+}
+
+.Avatar{
+  width: 20vw;
+  height: 20vh;
+  object-fit: contain;
+  margin: 20px;
+  
+}
+.author-avatar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.author-details{
+  color: #333;
+}
+
+.author-details h4{
+  font-size: 25px;
+  color: #333;
+  text-align: center;
+
+}
