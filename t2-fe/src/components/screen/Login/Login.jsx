@@ -35,7 +35,17 @@ export default function Login(){
             // Đăng nhập thành công, lưu thông tin user và access token vào localStorage 
             localStorage.setItem('token', response.data);
             dispatch(getTokenInfo(response.data));
-            setLoggedIn(true);
+            if(localStorage.getItem('currentUser')!=null)
+            {
+              setLoggedIn(true);
+            }else
+            {
+              // wait for 5s
+              setTimeout(() => {
+                setLoggedIn(true);
+              }
+              , 5000);
+            }
           }
           else{
             window.confirm(response.data);
