@@ -1,0 +1,17 @@
+
+.card-img-top {
+    width: 150px; 
+    height: 150px;
+}
+
+.image-form > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.image-form{
+    margin: 0;
+}
+  

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import AdHeader from '../../admin/ad-header/adHeader';
 import theUser from '../UserProfile/theUser.png'
 import './CBlog.css';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import axios from 'axios';
 
 const Blog = () => {
@@ -99,7 +100,7 @@ const Blog = () => {
       <div className="col-md-4">
         <div className="author-info">
             <div className="author-avatar">
-                <img src={theUser} alt="Avatar" className='Avatar' />
+                <Image src={user?.avatar || theUser} alt="Avatar" className='Avatar' roundedCircle />
             </div>
             <div className="author-details">
                 <h4>{user?.realname || "" }</h4>

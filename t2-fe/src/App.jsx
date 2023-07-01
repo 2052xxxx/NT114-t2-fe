@@ -19,7 +19,7 @@ import Tags from './components/admin/tags/tags';
 import UserProfile from './components/screen/UserProfile/UserProfile_screen';
 import Initial from './components/screen/subContent/Initial';
 import Home from './components/screen/Home/Home';
-import Settings from './components/screen/Settings/Settings';
+import Image from './components/screen/Settings/Images/Image';
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
           <Route path="/headerPage" element={<AdHeader/>}/>          
           <Route path="/home" element={<Home/>}/>
           <Route path="/Article/:articleID" element={<Blog/>}/>
-          <Route path="/settings" element={<Settings/>}/>
+          <Route path="/images" element={<Image/>}/>
           {/* <Route path="/cBlog" element={<CBlog/>}/>
           <Route path="/CBlogNext" element={<CBlogNext/>}/>
           <Route path="/pagez" element={<Pagez/>}/> */}

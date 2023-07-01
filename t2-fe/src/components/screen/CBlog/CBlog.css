@@ -39,9 +39,9 @@
 }
 
 .Avatar{
-  width: 20vw;
-  height: 20vh;
-  object-fit: contain;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
   margin: 20px;
   
 }

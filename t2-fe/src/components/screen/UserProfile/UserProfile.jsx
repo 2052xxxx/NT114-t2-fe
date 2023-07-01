@@ -5,14 +5,21 @@ import theUser from './theUser.png';
 import { useSelector } from 'react-redux';
 import CBlog from '../CBlog/CBlog';
 import { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import Modal from 'react-bootstrap/Modal';
+import Meomage from '../Settings/Images/Image';
 
 const UserProfile = () => {
+
+  const [changeImg, setChangeImg] = useState(false);
+  const handleCloseChangeImg = () => setChangeImg(false);
+  const handleShowChangeImg = () => setChangeImg(true);
   
   const user = useSelector((state) => state.login?.currentUser);
   const [articles, setArticles] = useState([]);
   const navigate = useNavigate();
+
+
 
   useEffect(() => {
     // Fetch articles from the API
@@ -32,10 +39,11 @@ const UserProfile = () => {
     return (
       <div>
         <Container fluid className="user-profile">
-          <div className="paperwall-background"></div>
+          
+          
           <Row className="follow-row">
             <Col md={12} className="text-center">
-              <Image src={theUser} roundedCircle className="profile-avatar" />
+              <Image src={user[0]?.avatar || theUser} roundedCircle className="profile-avatar" onClick={handleShowChangeImg}/>
               {/* {user.po=="admin"?
                 <div className="profile-name"> <h2>{user?.username || "" }</h2></div>: ""
               } */}
@@ -50,6 +58,7 @@ const UserProfile = () => {
                 <div>Following: 50</div>
                 
               </div>
+              
             </Col>
           </Row>
           <Row className="info-row">
@@ -73,6 +82,7 @@ const UserProfile = () => {
             </Col>
           </Row>
         </Container>
+
       </div>
     );
   }
