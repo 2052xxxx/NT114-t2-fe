@@ -6,8 +6,6 @@ import { useSelector } from 'react-redux';
 import CBlog from '../CBlog/CBlog';
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import Modal from 'react-bootstrap/Modal';
-import Meomage from '../Settings/Images/Image';
 
 const UserProfile = () => {
 

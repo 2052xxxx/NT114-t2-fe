@@ -1,0 +1,22 @@
+.settings-user-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+.stcomp-components {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-settings {
+  padding-top: 15vh;
+}
+
+.settingsTitle {
+  color: #553566;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

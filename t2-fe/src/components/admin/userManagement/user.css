@@ -2,3 +2,11 @@
     font-size: 0.8em;
     /* overflow: hidden; */
 }
+
+.imgPreview{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    
+}

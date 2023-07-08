@@ -79,10 +79,6 @@ const UploadImageForm = () => {
     }
   };
 
-  const handleImageChange = (e) => {
-    setSelectedImage(e.target.files[0]);
-  };
-
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
@@ -92,17 +88,17 @@ const UploadImageForm = () => {
 
     const formData = new FormData();
     formData.append('file', selectedImage);
-
-    axios.post("https://localhost:7015/api/User/uploadImage/"+ user[0]?.userid, formData)
+  
+    axios.post("https://localhost:7015/api/User/uploadImage/"+ user[0].userid, formData)
     .then((response) => {
       console.log(response);
       if (response.status === 200) {
         setSuccess(true);
-        setToken(response.data);
-        localStorage.setItem('token', response.data);
+        console.log(response.data);
       }
       else if (response.status === 401) {
         setSuccess(false);
+        console.log(response.data);
       }
     }
     )
@@ -116,7 +112,8 @@ const UploadImageForm = () => {
 
   // Nếu đã đăng nhập, chuyển hướng đến "/HeaderPage"
   if (success) {
-    return window.location.assign("/UserProfile");
+    console.log("success");
+    // window.location.href = "/UserProfile";
   }
 
   return (

@@ -1,4 +1,4 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT_REQUEST, LOGOUT_SUCCESS, LOGOUT_FAILURE } from './constants';
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, PUT_USER_REQUEST, PUT_USER_SUCCESS, PUT_USER_FAILURE } from './constants';
 import axios from 'axios';
 
 export const loginRequest = () => ({
@@ -17,16 +17,17 @@ export const loginFailure = (error) => ({
   payload: error,
 });
 
-export const logoutRequest = () => ({
-  type: LOGOUT_REQUEST,
+export const putUserRequest = () => ({
+  type: PUT_USER_REQUEST,
 });
 
-export const logoutSuccess = () => ({
-  type: LOGOUT_SUCCESS,
+export const putUserSuccess = (user) => ({
+  type: PUT_USER_SUCCESS,
+  payload: user,
 });
 
-export const logoutFailure = (error) => ({
-  type: LOGOUT_FAILURE,
+export const putUserFailure = (error) => ({
+  type: PUT_USER_FAILURE,
   payload: error,
 });
 
@@ -62,6 +63,32 @@ export const getTokenInfo =  (token) => {
 }
 };
 
+export const editProfile = (user) => {
+  return (dispatch) => {
+    dispatch(putUserRequest());
+    try {
+      // Gửi yêu cầu đăng xuất đến API với username và email người dùng
+      axios.put('https://localhost:7015/api/User/editProfile/'+ user[0]?.userid, user)
+      .then((response) => {
+        console.log(response);
+        if (response.status === 200) {
+          localStorage.clear();
+          localStorage.setItem('token', response.data);
+          dispatch(putUserSuccess(response.data));
+          }
+        else if (response.status === 401) {
+          dispatch(putUserFailure(response.data));
+          console.log(response.data);
+        }
+      }
+      )
+      // Xóa user và access token khỏi localStorage
+      dispatch(putUserSuccess());
+    } catch (error) {
+      dispatch(putUserFailure(error.message));
+    }
+  };
+}
 // export const logout = () => {
 //   return (dispatch) => {
 //     dispatch(logoutRequest());

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import theLogo from '../../screen/header/theLogo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faPenNib, faBell, faGear } from '@fortawesome/free-solid-svg-icons';
@@ -7,43 +7,16 @@ import { faRightFromBracket, faEnvelope } from '@fortawesome/free-solid-svg-icon
 import Dropdown from 'react-bootstrap/Dropdown';
 import Button from 'react-bootstrap/esm/Button';
 import Image from 'react-bootstrap/Image';
-import './adHeader.css';
-import { useSelector } from "react-redux";
-import axios from "axios";
-import { logout } from "../../../redux/authActions";
-import { useDispatch } from "react-redux";
+import './thereal-ad-header.css';
+// import { useSelector } from "react-redux";
+// import axios from "axios";
+// import { logout } from "../../../redux/authActions";
+// import { useDispatch } from "react-redux";
 
 export default function Header(){
-    const user = useSelector((state) => state.login?.currentUser);
-    // const [show, setShow] = useState(false);
-
-    // const handleClose = () => setShow(false);
-    // const handleShow = () => setShow(true);
-    // logout = () => {
+   
     const handleNavHome = () => {
         window.location.href = "/Home";
-    }
-
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        const data = {
-            username: currentUser[0].username,
-          email: currentUser[0].email,
-        };
-   
-    const handleLogout = () => {
-        axios.post('https://localhost:7015/api/User/logout', data)
-        .then((response) => {
-            if (response.status === 200) {
-                // Xóa user và access token khỏi localStorage
-                localStorage.clear();
-                window.location.assign("/");
-                console.log("Logged out successfully");
-            }
-            else if (response.status === 401) {
-                console.log("Failed to logout. Please check again.");
-            }
-        })
-        
     }
     return(
         <header className='ad-Header'>
@@ -56,7 +29,7 @@ export default function Header(){
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
             </form>
-            <div className="header-components">     
+            {/* <div className="header-components">     
                 
                     <a href="/Writing">
                         <Button className="btn-write">
@@ -104,7 +77,7 @@ export default function Header(){
                     </Dropdown>
                     </div>                                    
                 </div>
-            </div>
+            </div> */}
         </header>
     )
 }

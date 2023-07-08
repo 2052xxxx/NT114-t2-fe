@@ -100,7 +100,7 @@ const Blog = () => {
       <div className="col-md-4">
         <div className="author-info">
             <div className="author-avatar">
-                <Image src={user?.avatar || theUser} alt="Avatar" className='Avatar' roundedCircle />
+                <Image src={user?.avatar || theUser} alt="Avatar" className='profile-avatar' roundedCircle />
             </div>
             <div className="author-details">
                 <h4>{user?.realname || "" }</h4>

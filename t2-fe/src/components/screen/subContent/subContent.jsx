@@ -15,10 +15,7 @@ export default function SubContent(){
                     <Col className="col-md-7">  
                         <div>
                             <h1>WRITE READ WRITE</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Perferendis aliquam error at recusandae autem laboriosam saepe, dolores accusamus reprehenderit. 
-                            Aperiam vero libero eligendi incidunt debitis non, repellendus culpa sunt. 
-                            Delectus!</p>  
+                            <p>A place where you can explore and share your own information, knowledge, and experiences with the online community. We have created a friendly and reliable environment for everyone to connect, exchange opinions, and learn from each other.</p>  
                         </div>                                                
                     </Col>
                     <Col className="col-md-5">        

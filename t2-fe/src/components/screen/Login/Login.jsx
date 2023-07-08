@@ -44,7 +44,7 @@ export default function Login(){
               setTimeout(() => {
                 setLoggedIn(true);
               }
-              , 5000);
+              , 1500);
             }
           }
           else{

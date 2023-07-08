@@ -3,6 +3,7 @@ import { Table, Toast } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { Modal, Button, Row, Col } from "react-bootstrap";
 import axios from "axios";
+import theUser from "../../screen/UserProfile/theUser.png";
 import "./user.css";
 
 export default function User() {
@@ -83,7 +84,10 @@ export default function User() {
           <td>{user.username}</td>
           <td>{user.realname}</td>
           <td>{user.email}</td>
-          <td>{user.avatar}</td>
+          <td>
+            <img src={user.avatar || theUser} alt="" className="imgPreview"/>
+            
+          </td>
           <td>{user.bio}</td>
           <td>{user.registrationDate}</td>
           <td>                      
